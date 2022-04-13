@@ -16,3 +16,9 @@ def handle_hello():
     }
 
     return jsonify(response_body), 200
+
+@api.route("/register" , methods=["POST"])
+def handle_register():
+    response_body = {
+        "message": "First try"
+    }
