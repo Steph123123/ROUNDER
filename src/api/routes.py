@@ -19,6 +19,17 @@ def handle_hello():
 
 @api.route("/register" , methods=["POST"])
 def handle_register():
-    response_body = {
-        "message": "First try"
-    }
+    body=request.get_json()
+    email=body["email"]
+    password=body["password"]
+    name=body["name"]
+    lastname=body["lastname"]
+    dni=body["dni"]
+    username=body["username"]
+
+    user=User(email=email, password=password, name=name,lastname=lastname, dni=dni, username=username)
+    db.session.add(user)
+    db.session.commit()
+
+    return jsonify ({"mensaje" : "Welcome to Rounder!"}) 
+

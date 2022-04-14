@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 class User(db.Model):
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
@@ -28,10 +29,12 @@ class User(db.Model):
         }
 
 class Moto(db.Model):
+    __tablename__ = 'moto'
     id = db.Column(db.Integer, primary_key=True)
     marca = db.Column(db.String(80), unique=False, nullable=False)
     modelo = db.Column(db.String(80), unique=False, nullable=False)
     cilindrada = db.Column(db.String(80), unique=False, nullable=False)
+    circuito_id = db.Column(db.Integer, db.ForeignKey('circuito.id'))
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -47,17 +50,12 @@ class Moto(db.Model):
 
 
 class Circuito(db.Model):
+    __tablename__ = 'circuito'
     id = db.Column(db.Integer, primary_key=True)
-    montmelo = db.Column(db.String(80), unique=False, nullable=False)
-    alcarras = db.Column(db.String(80), unique=False, nullable=False)
-    cheste = db.Column(db.String(80), unique=False, nullable=False)
-    castelloli = db.Column(db.String(80), unique=False, nullable=False)
-    motorland = db.Column(db.String(80), unique=False, nullable=False)
-    navarra = db.Column(db.String(80), unique=False, nullable=False)
-    albacete = db.Column(db.String(80), unique=False, nullable=False)
-    jerez = db.Column(db.String(80), unique=False, nullable=False)
-    jarama = db.Column(db.String(80), unique=False, nullable=False)
-    montblac = db.Column(db.String(80), unique=False, nullable=False)
+    name = db.Column(db.String(80), unique=False, nullable=False)
+    place = db.Column(db.String(200), unique=False, nullable=False)
+    Moto = db.relationship("Moto")
+
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -65,16 +63,7 @@ class Circuito(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "montmelo": self.montmelo,
-            "alcarras" : self.alcarras,
-            "castelloli" : self.castelloli,
-            "cheste" : self.cheste,
-            "motorland" : self.motorland,
-            "navarra" : self.navarra,
-            "albacete" : self.albacete,
-            "jerez" : self.jerez,
-            "jarama" : self.jarama,
-            "montblac" : self.montblanc,
+            
         }
 
     
