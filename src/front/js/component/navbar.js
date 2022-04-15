@@ -52,12 +52,12 @@ export const Navbar = () => {
               login
             </button>
           </Link>
-          <Link to="/registro">
+          <Link to="/register">
             <button
               className="btn btn-warning  text-uppercase"
-              style={btnWidth}
+              style={loginBtn}
             >
-              Register
+              Sign Up
             </button>
           </Link>
         </div>
@@ -77,12 +77,12 @@ export const Navbar = () => {
           </span>
         </Link>
         <div className="ml-auto d-flex">
-          <Link className="me-2" to="/perfilusuario">
+          <Link className="me-2" to="/profile">
             <button className="btn btn-light  text-uppercase" style={btnWidth}>
               Profile
             </button>
           </Link>
-          <Link to="/login">
+          <Link to="/">
             <button
               onClick={() => setLoggedIn(false)}
               className="btn btn  text-uppercase"

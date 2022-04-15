@@ -21,13 +21,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 
-			getMessage: async () => {
+			register: async (email, password, name, lastname, dni, username) => {
 				// fetching data from the backend
-				const response = await fetch(process.env.BACKEND_URL + "/api/hello")
-				//const data = await response.json();
-					.then(resp => resp.json())
-					.then(data => setStore({ message: data.message }))
-					.catch(error => console.log("Error loading message from backend", error));
+				const response = await fetch(process.env.BACKEND_URL + "/api/register",{
+					method : 'POST',
+					body : JSON.stringify ({
+						email : email,
+						password: password,
+						name: name,
+						lastname : lastname,
+						dni: dni,
+						username: username,
+					 }),
+					 headers: {
+                        'Content-type': 'application/json'
+                    }
+					})
+				    const data = await response.json();
+					//const data = await setStore({ message: data.message }) para guardar informacion en el store
+					//.catch(error =>  verificar si hay errores 
+						 console.log("Error loading message from backend", data);
 			},
 			changeColor: (index, color) => {
 				//get the store
