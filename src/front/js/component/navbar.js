@@ -14,7 +14,7 @@ export const Navbar = () => {
 
   const fontStyles = {
     fontFamily: "Helvetica",
-    color: "#1FBCC2",
+    color: "rgb(59, 135, 135)",
   };
 
   const btnWidth = {
@@ -24,7 +24,7 @@ export const Navbar = () => {
   };
 
   const navbarColor = {
-    backgroundColor: "#000000",
+    backgroundColor: "rgb(48, 61, 61)",
   };
 
   const loginBtn = {
@@ -35,6 +35,7 @@ export const Navbar = () => {
     return (
       <>
         <Link className="text-decoration-none" to="/home.js">
+          
           <span
             className="navbar-brand mb-0 h1 fs-1 fw-bolder text-uppercase "
             style={fontStyles}

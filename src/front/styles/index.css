@@ -2,9 +2,59 @@
     General Styles used on every website (Don't Repeat Yourself)
 */
 footer {
-    background-color: black;
+    background-color: rgb(48, 61, 61);
     color:aliceblue
 }
 .registro {
     background-color: rgb(143, 146, 146);
 }
+/* HOME*/
+.jumbocont{
+    height:auto;
+    width: 100%;
+    background-image: url(https://c.wallhere.com/photos/11/f9/Moto_GP_Stefan_Bradl_Jorge_Lorenzo_TVS_Apache-160713.jpg!d);
+
+}
+.jumbotron{
+    width: 75%;
+}
+.h1cont {
+    width: 50%;
+}
+.jumbop {
+    font-size: 2rem;
+}
+.homeimg {
+   margin-left: 2rem;
+   width: 40%; 
+}
+.hello {
+    color: rgb(25, 109, 121);
+    
+    
+}
+.center{
+    width: 75%;
+}
+.searcher {
+    
+    width: 50%;
+    margin-left: 25%;
+    
+}
+.campo{
+    background-color: rgb(204, 231, 222);
+    width: 50%;
+    position: relative;
+    font-weight: bold;
+    margin-left: 25%;
+    margin-top: 2rem;
+}
+.card{
+    width: 50%;
+    
+    margin-left: 25%;
+    margin-top: 2rem;
+}
+
+
