@@ -41,7 +41,7 @@ export const Home = () => {
             </div>
         </div>
 
-		<div class="row row-cols-1 row-cols-md-3 g-4">
+		<div class="contcard row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="card h-100">
       <img src="https://www.todocircuito.com/circuito/circuito-de-barcelona-catalunya/avatar.jpg" class="card-img-top" alt="..."/>

@@ -14,13 +14,13 @@ export const Navbar = () => {
 
   const fontStyles = {
     fontFamily: "Helvetica",
-    color: "rgb(59, 135, 135)",
+    color: "#3F9E9E",
   };
 
   const btnWidth = {
     width: "8rem",
-    color: "#5c1ec7",
-	backgroundColor: "#1FBCC2"
+    color: "#FFFFFF",
+	backgroundColor: "#3F9E9E"
   };
 
   const navbarColor = {
@@ -28,13 +28,13 @@ export const Navbar = () => {
   };
 
   const loginBtn = {
-    backgroundColor: "#1FBCC2",
+    backgroundColor: "#3F9E9E",
   };
 
   const regularNavbar = () => {
     return (
       <>
-        <Link className="text-decoration-none" to="/home.js">
+        <Link className="text-decoration-none" to="/home">
           
           <span
             className="navbar-brand mb-0 h1 fs-1 fw-bolder text-uppercase "
@@ -69,7 +69,7 @@ export const Navbar = () => {
   const userLoggedNavbar = () => {
     return (
       <>
-        <Link className="text-decoration-none" to="/home">
+        <Link className="text-decoration-none" to="/">
           <span
             className="navbar-brand mb-0 h1 fs-1 fw-bolder text-uppercase "
             style={fontStyles}

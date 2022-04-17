@@ -5,9 +5,7 @@ footer {
     background-color: rgb(48, 61, 61);
     color:aliceblue
 }
-.registro {
-    background-color: rgb(143, 146, 146);
-}
+
 /* HOME*/
 .jumbocont{
     height:auto;
@@ -52,9 +50,40 @@ footer {
 }
 .card{
     width: 50%;
-    
     margin-left: 25%;
     margin-top: 2rem;
 }
+.contcard {
+    background-color: rgb(48, 61, 61);
+}
 
 
+
+
+/* REGISTRO*/
+
+.registro {
+    background-color: #999999;
+}
+.reglabel {
+    font-weight: bold;
+    
+}
+
+.regbtn {
+    background-color: rgb(25, 109, 121) ;
+    margin-left: 40%;
+    width: 20rem;
+    margin-bottom: 5rem;
+}
+
+.regform{
+    margin-left: 20%;
+    padding-top: 3rem;
+
+    
+}
+.firstform {
+    margin-top:20%;
+    
+}
