@@ -10,7 +10,7 @@ footer {
 .jumbocont{
     height:auto;
     width: 100%;
-    background-image: url(https://c.wallhere.com/photos/11/f9/Moto_GP_Stefan_Bradl_Jorge_Lorenzo_TVS_Apache-160713.jpg!d);
+    background-image: url(https://live.staticflickr.com/65535/47121358544_db6c5a0875_o.jpg);
 
 }
 .jumbotron{
@@ -48,13 +48,15 @@ footer {
     margin-left: 25%;
     margin-top: 2rem;
 }
-.card{
-    width: 50%;
-    margin-left: 25%;
+.homecard{
+    width: auto;
+    
     margin-top: 2rem;
+    background-color: rgb(41, 131, 138);
+    
 }
 .contcard {
-    background-color: rgb(48, 61, 61);
+    background-color: rgb(84, 95, 95);
 }
 
 
@@ -87,3 +89,54 @@ footer {
     margin-top:20%;
     
 }
+
+/* PROFILE*/
+
+.userimg{
+    border-radius: 10rem;
+    margin-top: 7rem;
+    
+}
+
+
+
+
+
+
+
+/* CIRCUIT PROFILE */
+
+.circuitimg {
+    padding: 5rem;
+}
+
+.circuitinfo {
+    margin-top: 3rem;
+    margin-right: 3rem;
+    padding: 3rem;
+    background-color: #bebebe;
+    border-radius: 1rem;
+}
+.circuitcont{
+    background-color: #999999;
+
+}
+.circuitcard {
+    background-color: rgb(61, 139, 139);
+    margin-bottom: 3rem;
+}
+.motocards {
+    height: 5rem;
+}
+
+
+
+
+
+
+
+
+
+/* FOOTER*/
+
+ 

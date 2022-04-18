@@ -33,3 +33,15 @@ def handle_register():
 
     return jsonify ({"mensaje" : "Welcome to Rounder!"}) 
 
+@api.route("/login" , methods=["POST"])
+def handle_login():
+    body=request.get_json()
+    email=body["email"]
+    password=body["password"]
+
+    user=User.query.filter_by (email=email, password=password).first
+
+    access_token = create_access_token(identity=email)
+    return jsonify(access_token=access_token) 
+
+

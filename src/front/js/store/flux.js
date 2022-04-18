@@ -42,6 +42,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 					//.catch(error =>  verificar si hay errores 
 						 console.log("Error loading message from backend", data);
 			},
+			login : async (email, password) => {
+				const response = await fetch(process.env.BACKEND_URL + "/api/register",{
+					method : 'POST',
+					body : JSON.stringify ({
+						email : email,
+						password: password,
+					 }),
+					 headers: {
+                        'Content-type': 'application/json'
+                    }
+					})
+				    const data = await response.json();
+					 localStorage.setItem("token", data.token);
+					//const data = await setStore({ message: data.message }) para guardar informacion en el store
+					//.catch(error =>  verificar si hay errores 
+						 console.log("Error loading message from backend", data);
+
+			},
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
