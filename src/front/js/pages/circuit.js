@@ -35,7 +35,8 @@ export const Circuit = () => {
             </div>
           </div>
          
-        </div> <div class="row row-cols-2 row-cols-md-3 g-4">
+        </div>
+         <div class="row row-cols-2 row-cols-md-3 g-4">
             <div class="motocards col">
               <div class=" card">
                 <img
@@ -44,11 +45,9 @@ export const Circuit = () => {
                   alt="..."
                 />
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
+                  <h5 class="card-title"> Honda CBR1000RR SR</h5>
                   <p class="card-text">
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
+                    Excelente rendimiento en circuito. De las motos mas confiables que hay 
                   </p>
                 </div>
                 
@@ -62,11 +61,9 @@ export const Circuit = () => {
                   alt="..."
                 />
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
+                  <h5 class="card-title"> Kawasaki zx10RR</h5>
                   <p class="card-text">
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
+                    Moto super divertida
                   </p>
                 </div>
               </div>
@@ -90,8 +87,73 @@ export const Circuit = () => {
               </div>
               
             </div>
+
           </div>
+
+          <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTykjKzdTXH85eFSuykU3BrWr7B7a6nqqhbuw&usqp=CAU" class="card-img-top" alt="..."/>
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-saIlUD7FNxX31Uk8niO-VxdTIE4UptJZbQ&usqp=CAU" class="card-img-top" alt="..."/>
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a short card.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaJPZuA5AypY3vNPDqUfJBxtz_FBDlsLpDYg&usqp=CAU" class="card-img-top" alt="..."/>
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card ">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp-BUetOJOcQAgpr-o82M2HSQlkjFlMHBPZA&usqp=CAU" class="card-img-top" alt="..."/>
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+    <div class="card ">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp-BUetOJOcQAgpr-o82M2HSQlkjFlMHBPZA&usqp=CAU" class="card-img-top" alt="..."/>
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+
+
+          
+
+
+
+
+
+      </div>
+
+      
+
+      
+
+
+
     </div>
   );
 };
