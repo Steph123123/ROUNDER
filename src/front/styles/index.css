@@ -92,6 +92,12 @@ footer {
 
 /* PROFILE*/
 
+body {
+    
+
+    background-color: rgb(184, 184, 184);
+}
+
 .userimg{
     border-radius: 10rem;
     margin-top: 7rem;
@@ -109,18 +115,18 @@ footer {
 .circuitimg {
     padding: 5rem;
 }
+.circcard{
+    margin-bottom: 3rem;
+}
 
 .circuitinfo {
     margin-top: 3rem;
     margin-right: 3rem;
     padding: 3rem;
-    background-color: #bebebe;
+    background-color: #dcdada;
     border-radius: 1rem;
 }
-.circuitcont{
-    background-color: #999999;
 
-}
 .circuitcard {
     background-color: rgb(61, 139, 139);
     margin-bottom: 3rem;
@@ -129,7 +135,11 @@ footer {
     height: 5rem;
 }
 
-
+.motobut{
+    background-color: #049e8a;
+    margin-bottom: 3rem;
+    width: 10rem;
+}
 
 
 
