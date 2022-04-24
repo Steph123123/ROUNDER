@@ -2,6 +2,11 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+
+
+
+
+
 class User(db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
@@ -11,6 +16,7 @@ class User(db.Model):
     lastname = db.Column(db.String(80), unique=False, nullable=False)
     dni = db.Column(db.String(10), unique=True, nullable=False)
     username = db.Column(db.String(80), unique=True, nullable=False)
+    moto = db.relationship("Moto")
 
 
     def __repr__(self):
@@ -34,17 +40,25 @@ class Moto(db.Model):
     marca = db.Column(db.String(80), unique=False, nullable=False)
     modelo = db.Column(db.String(80), unique=False, nullable=False)
     cilindrada = db.Column(db.String(80), unique=False, nullable=False)
+    description = db.Column(db.String(200), unique=False, nullable=False)
+    price = db.Column(db.Integer, unique=False, nullable=False)
+    image = db.Column(db.String(200), unique=False, nullable=False)
     circuito_id = db.Column(db.Integer, db.ForeignKey('circuito.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    
 
     def __repr__(self):
-        return f'<User {self.email}>'
+        return f'<Moto {self.modelo}>'
 
     def serialize(self):
         return {
             "id": self.id,
+            "image" : self.image,
             "marca": self.marca,
             "modelo" : self.modelo,
             "cilindrada" : self.cilindrada,
+            "description" : self.description,
+            "price" : self.price
             }
 
 
@@ -55,15 +69,26 @@ class Circuito(db.Model):
     name = db.Column(db.String(80), unique=False, nullable=False)
     place = db.Column(db.String(200), unique=False, nullable=False)
     Moto = db.relationship("Moto")
+    description = db.Column(db.String(500), unique=True, nullable=False)
+    image = db.Column(db.String(200), unique=False, nullable=False)
+    
 
 
     def __repr__(self):
-        return f'<User {self.email}>'
+        return f'<Circuito {self.name}>'
 
     def serialize(self):
         return {
             "id": self.id,
+            "name" : self.name,
+            "image" : self.image,
+            "description" : self.description,
+            "place" : self.place,
+            
+            
             
         }
+
+    
 
     

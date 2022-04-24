@@ -2,8 +2,9 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Circuito, Moto
 from api.utils import generate_sitemap, APIException
+
 
 api = Blueprint('api', __name__)
 
@@ -45,3 +46,36 @@ def handle_login():
     return jsonify(access_token=access_token) 
 
 
+@api.route("/circuit/<int:id>", methods = ["GET"])
+def getcircuit(id):
+    circuito = Circuito.query.filter_by(id=id).first()
+    circuito_id = Circuito.serialize(circuito)   
+    return jsonify(circuito_id), 200 
+    
+        
+           
+        
+   
+    
+@api.route("/circuit", methods = ["GET"])
+def getall():
+    circuito = Circuito.query.all()
+    allcircuits = list(map(lambda circuito: circuito.serialize(),circuito))
+    return jsonify(allcircuits)
+    
+@api.route("/circuitmoto/<int:circuito_id>", methods = ["GET"])
+def getmotobycircuit(circuito_id):
+    moto = Moto.query.filter_by(circuito_id= circuito_id)
+    motobycircuit = list(map(lambda moto: moto.serialize(),moto))
+
+    return jsonify(motobycircuit), 200 
+
+
+   
+@api.route("/moto/<int:id>", methods = ["GET"])
+def getmoto(id):
+    moto = Moto.query.filter_by(id=id).first()
+    moto_id = Moto.serialize(moto)   
+    return jsonify(moto_id), 200 
+
+    

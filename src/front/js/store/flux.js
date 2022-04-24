@@ -1,81 +1,80 @@
 const getState = ({ getStore, getActions, setStore }) => {
-	return {
-		store: {
-			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
-		},
-		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
+  return {
+    store: {
+      circuit: [],
+      onecircuit: [],
+	  circuitmoto :[],
+    },
+    actions: {
+      // Use getActions to call a function within a fuction
+      getcircuit: async () => {
+        const response = await fetch(process.env.BACKEND_URL + "/api/circuit");
+        const data = await response.json();
+        setStore({ circuit: data });
+      },
 
-			register: async (email, password, name, lastname, dni, username) => {
-				// fetching data from the backend
-				const response = await fetch(process.env.BACKEND_URL + "/api/register",{
-					method : 'POST',
-					body : JSON.stringify ({
-						email : email,
-						password: password,
-						name: name,
-						lastname : lastname,
-						dni: dni,
-						username: username,
-					 }),
-					 headers: {
-                        'Content-type': 'application/json'
-                    }
-					})
-				    const data = await response.json();
-					//const data = await setStore({ message: data.message }) para guardar informacion en el store
-					//.catch(error =>  verificar si hay errores 
-						 console.log("Error loading message from backend", data);
-			},
-			login : async (email, password) => {
-				const response = await fetch(process.env.BACKEND_URL + "/api/register",{
-					method : 'POST',
-					body : JSON.stringify ({
-						email : email,
-						password: password,
-					 }),
-					 headers: {
-                        'Content-type': 'application/json'
-                    }
-					})
-				    const data = await response.json();
-					 localStorage.setItem("token", data.token);
-					//const data = await setStore({ message: data.message }) para guardar informacion en el store
-					//.catch(error =>  verificar si hay errores 
-						 console.log("Error loading message from backend", data);
+      getcircuitbyid: async (id) => {
+        const response = await fetch(
+          process.env.BACKEND_URL + "/api/circuit/" + id
+        );
+        const data = await response.json();
+        setStore({ onecircuit: data });
+      },
 
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+	  getmotobycircuit: async (id) => {
+        const response = await fetch(
+          process.env.BACKEND_URL + "/api/circuitmoto/" + id
+        );
+        const data = await response.json();
+        setStore({ circuitmoto: data });
+      },
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
-			}
-		}
-	};
+      register: async (email, password, name, lastname, dni, username) => {
+        // fetching data from the backend
+        const response = await fetch(
+          process.env.BACKEND_URL + "/api/register",
+          {
+            method: "POST",
+            body: JSON.stringify({
+              email: email,
+              password: password,
+              name: name,
+              lastname: lastname,
+              dni: dni,
+              username: username,
+            }),
+            headers: {
+              "Content-type": "application/json",
+            },
+          }
+        );
+        const data = await response.json();
+        //const data = await setStore({ message: data.message }) para guardar informacion en el store
+        //.catch(error =>  verificar si hay errores
+        console.log("Error loading message from backend", data);
+      },
+      login: async (email, password) => {
+        const response = await fetch(
+          process.env.BACKEND_URL + "/api/register",
+          {
+            method: "POST",
+            body: JSON.stringify({
+              email: email,
+              password: password,
+            }),
+            headers: {
+              "Content-type": "application/json",
+            },
+          }
+        );
+        const data = await response.json();
+        localStorage.setItem("token", data.token);
+        //const data = await setStore({ message: data.message }) para guardar informacion en el store
+        //.catch(error =>  verificar si hay errores
+        console.log("Error loading message from backend", data);
+      },
+    },
+  };
 };
 
 export default getState;

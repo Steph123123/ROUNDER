@@ -1,21 +1,23 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
+import { useParams } from "react-router-dom";
 
 import "../../styles/home.css";
 
 export const Circuit = () => {
   const { store, actions } = useContext(Context);
-
+  const { id } = useParams();
+  useEffect(() => {
+    actions.getcircuitbyid(id);
+  }, []);
   return (
     <div className="circuitcont mt-3">
       <div className=" container text-center justify-content-center">
-        
-
         <div class="circuitcard card mb-3">
           <div class=" circinf row ">
             <div class="col-md-4 ">
               <img
-                src="https://www.todocircuito.com/circuito/circuito-de-barcelona-catalunya/avatar.jpg"
+                src={store.onecircuit.image}
                 className="circuitimg img-fluid rounded-start "
                 alt="..."
               />
@@ -23,26 +25,31 @@ export const Circuit = () => {
             <div class="col-md-8">
               <div class="circuitinfo card-body">
                 <h5 class="card-title">
-                  <strong>MONTMELO</strong>
+                  <strong>{store.onecircuit.name}</strong>
                 </h5>
                 <p class=" card-text ">
-                  El Circuito de Barcelona-Cataluña, también conocido como
-                  Circuito de Montmeló o Circuito de Barcelona, es un autódromo
-                  situado en las poblaciones de Montmeló y Granollers, en la
-                  provincia de Barcelona, comunidad autónoma de Cataluña, España
+                {store.onecircuit.description}
                 </p>
                 <div className="d-flex justify-content-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="#009988" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <circle cx="12" cy="11" r="3" />
-  <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
-</svg>
-<div className="d-flex justify-content-center"> </div> 
-<span>Carrer Mas Moreneta, s/n, 08160, Barcelona</span>
-                
-                  
-                  </div>
-                
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-map-pin"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="#009988"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <circle cx="12" cy="11" r="3" />
+                    <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                  </svg>
+                  <div className="d-flex justify-content-center"> </div>
+                  <span>{store.onecircuit.place}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -62,11 +69,13 @@ export const Circuit = () => {
                 </p>
                 <span>
                   <strong>850$</strong>
-                  
                 </span>
               </div>
-              <div className="d-flex justify-content-center">  
-              <button type="button" class="motobut btn btn-secondary">RESERVE</button></div>
+              <div className="d-flex justify-content-center">
+                <button type="button" class="motobut btn btn-secondary">
+                  RESERVE
+                </button>
+              </div>
             </div>
           </div>
           <div class="col">
@@ -81,11 +90,13 @@ export const Circuit = () => {
                 <p class="card-text">Moto super divertida</p>
                 <span>
                   <strong>600$</strong>
-                 
                 </span>
-                
-              </div><div className="d-flex justify-content-center">  
-              <button type="button" class="motobut btn btn-secondary">RESERVE</button></div>
+              </div>
+              <div className="d-flex justify-content-center">
+                <button type="button" class="motobut btn btn-secondary">
+                  RESERVE
+                </button>
+              </div>
             </div>
           </div>
 
@@ -106,9 +117,12 @@ export const Circuit = () => {
                 <span>
                   <strong>550$</strong>
                 </span>
-                
-              </div><div className="d-flex justify-content-center">  
-              <button type="button" class="motobut btn btn-secondary">RESERVE</button></div>
+              </div>
+              <div className="d-flex justify-content-center">
+                <button type="button" class="motobut btn btn-secondary">
+                  RESERVE
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -131,9 +145,12 @@ export const Circuit = () => {
                 <span>
                   <strong>800$</strong>
                 </span>
-                
-              </div><div className="d-flex justify-content-center">  
-              <button type="button" class="motobut btn btn-secondary">RESERVE</button></div>
+              </div>
+              <div className="d-flex justify-content-center">
+                <button type="button" class="motobut btn btn-secondary">
+                  RESERVE
+                </button>
+              </div>
             </div>
           </div>
           <div class="col">
@@ -149,9 +166,12 @@ export const Circuit = () => {
                 <span>
                   <strong>300$</strong>
                 </span>
-               
-              </div> <div className="d-flex justify-content-center">  
-              <button type="button" class="motobut btn btn-secondary">RESERVE</button></div>
+              </div>{" "}
+              <div className="d-flex justify-content-center">
+                <button type="button" class="motobut btn btn-secondary">
+                  RESERVE
+                </button>
+              </div>
             </div>
           </div>
           <div class="col">
@@ -170,9 +190,12 @@ export const Circuit = () => {
                 <span>
                   <strong>550$</strong>
                 </span>
-                
-              </div><div className="d-flex justify-content-center">  
-              <button type="button" class="motobut btn btn-secondary">RESERVE</button></div>
+              </div>
+              <div className="d-flex justify-content-center">
+                <button type="button" class="motobut btn btn-secondary">
+                  RESERVE
+                </button>
+              </div>
             </div>
           </div>
           <div class="col">
@@ -192,13 +215,13 @@ export const Circuit = () => {
                 <span>
                   <strong>575$</strong>
                 </span>
-                
               </div>
-              <div className="d-flex justify-content-center">  
-              <button type="button" class="motobut btn btn-secondary">RESERVE</button></div>
+              <div className="d-flex justify-content-center">
+                <button type="button" class="motobut btn btn-secondary">
+                  RESERVE
+                </button>
+              </div>
             </div>
-            
-           
           </div>
         </div>
       </div>
