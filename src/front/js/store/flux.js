@@ -3,10 +3,15 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       circuit: [],
       onecircuit: [],
-	  circuitmoto :[],
+      circuitmoto: [],
+      onemoto: [],
+      isLoggedIn: false,
     },
     actions: {
       // Use getActions to call a function within a fuction
+      setIsLoggedIn: (bool) => {
+        setStore({ isLoggedIn: bool });
+      },
       getcircuit: async () => {
         const response = await fetch(process.env.BACKEND_URL + "/api/circuit");
         const data = await response.json();
@@ -21,7 +26,15 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ onecircuit: data });
       },
 
-	  getmotobycircuit: async (id) => {
+      getmotobyid: async (id) => {
+        const response = await fetch(
+          process.env.BACKEND_URL + "/api/moto/" + id
+        );
+        const data = await response.json();
+        setStore({ onemoto: data });
+      },
+
+      getmotobycircuit: async (id) => {
         const response = await fetch(
           process.env.BACKEND_URL + "/api/circuitmoto/" + id
         );

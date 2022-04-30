@@ -39,7 +39,7 @@ const Layout = () => {
 						<Route exact path="/register">
 							<Register />							
 						</Route>
-						<Route exact path="/circuit/:id">
+						<Route exact path="/circuit/:circuitid">
 							<Circuit />
 							
 						</Route>

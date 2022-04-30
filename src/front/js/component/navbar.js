@@ -1,16 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
   const [loggedIn, setLoggedIn] = useState(true);
-  /*
-  Esto tiene que ser una funcion
-  if (localStorage.GetItem(token)){
-    setLoggedIn(true) ==> este estado tiene que venir del store
-  }
-
-  */
+  const { store, actions } = useContext(Context);
 
   const fontStyles = {
     fontFamily: "Helvetica",
@@ -20,7 +15,7 @@ export const Navbar = () => {
   const btnWidth = {
     width: "8rem",
     color: "#FFFFFF",
-	backgroundColor: "#3F9E9E"
+    backgroundColor: "#3F9E9E",
   };
 
   const navbarColor = {
@@ -35,7 +30,6 @@ export const Navbar = () => {
     return (
       <>
         <Link className="text-decoration-none" to="/home">
-          
           <span
             className="navbar-brand mb-0 h1 fs-1 fw-bolder text-uppercase "
             style={fontStyles}

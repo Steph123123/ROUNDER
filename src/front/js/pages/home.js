@@ -29,9 +29,10 @@ export const Home = () => {
         </div>
         
       </div>
-      <div className="container">      
+      <div className="container mx-auto">  
+      <div classname=""> 
       <Circuitcard/>
-
+</div>   
       </div> 
     
     </div>

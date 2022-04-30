@@ -1,14 +1,16 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { Motocard} from "../component/motocard";
 
 import "../../styles/home.css";
 
 export const Circuit = () => {
   const { store, actions } = useContext(Context);
-  const { id } = useParams();
+  const { circuitid } = useParams();
   useEffect(() => {
-    actions.getcircuitbyid(id);
+    actions.getcircuitbyid(circuitid);
+    actions.getmotobycircuit(circuitid);
   }, []);
   return (
     <div className="circuitcont mt-3">
@@ -54,177 +56,50 @@ export const Circuit = () => {
             </div>
           </div>
         </div>
-        <div class=" row row-cols-2 row-cols-md-3 g-4">
-          <div class="motocards col">
-            <div class=" card">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6IrChVwi7gszY-N7_Mej46mAcAptyUXmGmQ&usqp=CAU"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title"> Honda CBR1000RR SR</h5>
-                <p class="card-text">
-                  Excellent track performance, very reliable HONDA is HONDA...
-                </p>
-                <span>
-                  <strong>850$</strong>
-                </span>
-              </div>
-              <div className="d-flex justify-content-center">
-                <button type="button" class="motobut btn btn-secondary">
-                  RESERVE
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvr_XfTOTxC3DsXsQRE6w2p5p5RNWMP_fp1w&usqp=CAU"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title"> Kawasaki zx10RR</h5>
-                <p class="card-text">Moto super divertida</p>
-                <span>
-                  <strong>600$</strong>
-                </span>
-              </div>
-              <div className="d-flex justify-content-center">
-                <button type="button" class="motobut btn btn-secondary">
-                  RESERVE
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwoSLxgSbU-vZ4ShGanF_ExWp3MZUQ4TPwyQ&usqp=CAU"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title"> SUZUKI GSX1000RR</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                <span>
-                  <strong>550$</strong>
-                </span>
-              </div>
-              <div className="d-flex justify-content-center">
-                <button type="button" class="motobut btn btn-secondary">
-                  RESERVE
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class=" circcard row row-cols-1 row-cols-md-3 g-4 mt-3">
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTykjKzdTXH85eFSuykU3BrWr7B7a6nqqhbuw&usqp=CAU"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">HONDA CBR1000RR </h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                <span>
-                  <strong>800$</strong>
-                </span>
-              </div>
-              <div className="d-flex justify-content-center">
-                <button type="button" class="motobut btn btn-secondary">
-                  RESERVE
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-saIlUD7FNxX31Uk8niO-VxdTIE4UptJZbQ&usqp=CAU"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">KAWASAKI ZX10 RR</h5>
-                <p class="card-text">This is a short card.</p>
-                <span>
-                  <strong>300$</strong>
-                </span>
-              </div>{" "}
-              <div className="d-flex justify-content-center">
-                <button type="button" class="motobut btn btn-secondary">
-                  RESERVE
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaJPZuA5AypY3vNPDqUfJBxtz_FBDlsLpDYg&usqp=CAU"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content.
-                </p>
-                <span>
-                  <strong>550$</strong>
-                </span>
-              </div>
-              <div className="d-flex justify-content-center">
-                <button type="button" class="motobut btn btn-secondary">
-                  RESERVE
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card ">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp-BUetOJOcQAgpr-o82M2HSQlkjFlMHBPZA&usqp=CAU"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">YAMAHA R1</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                <span>
-                  <strong>575$</strong>
-                </span>
-              </div>
-              <div className="d-flex justify-content-center">
-                <button type="button" class="motobut btn btn-secondary">
-                  RESERVE
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+      <div>
+      {store.circuitmoto.map((circuitval) => (
+        <div
+          key={circuitval.id}
+          className="card mb-3"
+          style={{ maxWidth: "540px" }}
+        >
+          <div className="row g-0">
+            <div className="col-md-4">
+              <img
+                src={circuitval.image}
+                className="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div className="col-md-8">
+              <div className="card-body">
+                <h5 className="card-title">{circuitval.name}</h5>
+                <p className="card-text">{circuitval.description}</p>
+                <p className="card-text">
+                  <small className="text-muted">Last updated 3 mins ago</small>
+                </p>
+              </div>
+            </div>
+            
+              <button
+                type="button"
+                onClick={actions.getmotobyid(circuitval.id)}
+                className="d-flex justify-content-center btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              >
+                Ver más...
+              </button>
+            
+            <Motocard key={store.onemoto.id }marca={store.onemoto.marca}/>
+
+          </div>
+        </div>
+      ))}
+    </div>
     </div>
   );
 };
+
+
+
+

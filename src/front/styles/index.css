@@ -22,39 +22,18 @@ footer {
 .jumbop {
     font-size: 2rem;
 }
-.homeimg {
-   margin-left: 2rem;
-   width: 40%; 
-}
+
 .hello {
     color: rgb(25, 109, 121);
     
     
 }
-.center{
-    width: 75%;
-}
-.searcher {
-    
-    width: 50%;
-    margin-left: 25%;
-    
-}
-.campo{
-    background-color: rgb(204, 231, 222);
-    width: 50%;
-    position: relative;
-    font-weight: bold;
-    margin-left: 25%;
-    margin-top: 2rem;
-}
-.homecard{
-    width: auto;
-    
-    margin-top: 2rem;
-    background-color: rgb(41, 131, 138);
-    
-}
+
+
+
+
+
+
 
 
 

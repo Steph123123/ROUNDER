@@ -42,7 +42,7 @@ class Moto(db.Model):
     cilindrada = db.Column(db.String(80), unique=False, nullable=False)
     description = db.Column(db.String(200), unique=False, nullable=False)
     price = db.Column(db.Integer, unique=False, nullable=False)
-    image = db.Column(db.String(200), unique=False, nullable=False)
+    image = db.Column(db.String(1000), unique=False, nullable=False)
     circuito_id = db.Column(db.Integer, db.ForeignKey('circuito.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     

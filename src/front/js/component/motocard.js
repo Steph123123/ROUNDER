@@ -1,42 +1,37 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 import "../../styles/home.css";
 
-
-
-
-export const Circuitcard = () => {
-    const { store, actions } = useContext(Context);
-    useEffect(() => {
-        actions.getmotobycircuit(id);
-    }, []);
-    return (
-        
-        <div>  
-            {store.circuit.map((circuitval) => (
-            <div key={circuitval.id} className="card mb-3" style={{maxWidth: "540px"}}>
-                <div className="row g-0">
-                  
-    <div className="col-md-4">
-      <img src={circuitval.image} className="img-fluid rounded-start" alt="..."/>
-    </div>
-    <div className="col-md-8">
-      <div className="card-body">
-        <h5 className="card-title">{circuitval.name}</h5>
-        <p className="card-text">{circuitval.description}</p>
-        <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+export const Motocard = (prop) => {
+  const { store, actions } = useContext(Context);
+  const { id } = useParams();
+  //useEffect(() => {
+ //   actions. getmotobyid(id);
+ // }, []);
+  return (
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         {prop.marca}
+         {}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
       </div>
     </div>
-    <Link to={"/circuit/" + circuitval.id}>
-              <button type="button" className="btn btn-dark">
-                Ver más...
-              </button>
-              </Link>
-                   
-                </div>
-            </div> ))}
-        </div>
-    )
+  </div>
+  );
+};
+Motocard.propTypes = {
+  marca: PropTypes.string
 };

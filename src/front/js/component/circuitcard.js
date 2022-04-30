@@ -30,7 +30,7 @@ export const Circuitcard = () => {
       </div>
     </div>
     <Link to={"/circuit/" + circuitval.id}>
-              <button type="button" className="btn btn-dark">
+              <button type="button" className="d- flex justify-content-center btn btn-dark">
                 Ver más...
               </button>
               </Link>
