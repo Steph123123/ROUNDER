@@ -84,10 +84,10 @@ export const Circuit = () => {
             
               <button
                 type="button"
-                onClick={actions.getmotobyid(circuitval.id)}
-                className="d-flex justify-content-center btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                onClick={()=> {actions.getmotobyid(circuitval.id)}}
+                className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"
               >
-                Ver más...
+                More...
               </button>
             
             <Motocard key={store.onemoto.id }marca={store.onemoto.marca}/>
