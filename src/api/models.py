@@ -44,6 +44,7 @@ class Moto(db.Model):
     description = db.Column(db.String(200), unique=False, nullable=False)
     price = db.Column(db.Integer, unique=False, nullable=False)
     image = db.Column(db.String(1000), unique=False, nullable=False)
+    stripe_id= db.Column(db.String(1000), unique=False, nullable=False)
     circuito_id = db.Column(db.Integer, db.ForeignKey('circuito.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     reserve_id = db.Column(db.Integer, db.ForeignKey('reserve.id'))
@@ -72,7 +73,7 @@ class Circuito(db.Model):
     name = db.Column(db.String(80), unique=False, nullable=False)
     place = db.Column(db.String(200), unique=False, nullable=False)
     Moto = db.relationship("Moto")
-    description = db.Column(db.String(500), unique=True, nullable=False)
+    description = db.Column(db.String(1000), unique=True, nullable=False)
     image = db.Column(db.String(200), unique=False, nullable=False)
     
 

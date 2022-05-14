@@ -9,9 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     },
     actions: {
       // Use getActions to call a function within a fuction
-      setIsLoggedIn: (bool) => {
-        setStore({ isLoggedIn: bool });
-      },
+     
       getcircuit: async () => {
         const response = await fetch(process.env.BACKEND_URL + "/api/circuit");
         const data = await response.json();
@@ -68,7 +66,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       login: async (email, password) => {
         const response = await fetch(
-          process.env.BACKEND_URL + "/api/register",
+          process.env.BACKEND_URL + "/api/login",
           {
             method: "POST",
             body: JSON.stringify({
@@ -82,6 +80,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         );
         const data = await response.json();
         localStorage.setItem("token", data.token);
+        setStore({ isLoggedIn: true });
         //const data = await setStore({ message: data.message }) para guardar informacion en el store
         //.catch(error =>  verificar si hay errores
         console.log("Error loading message from backend", data);

@@ -8,6 +8,7 @@ export const Login = () => {
   const { store, actions } = useContext(Context);
   const [email,setEmail] =useState("");
   const [password, setPassword] = useState("");
+  console.log(store.isLoggedIn)
 
   return (
     <div className="container text-center justify-content-center">
