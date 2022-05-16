@@ -39,21 +39,10 @@ export const Navbar = () => {
         </Link>
         <div className="ml-auto d-flex">
           <Link className="me-2" to="/login">
-            <button
-              onClick={() => setLoggedIn(true)}
-              className="btn btn-light  text-uppercase"
-              style={btnWidth}
-            >
-              login
-            </button>
+          <a class="navbtn nav-link active" aria-current="page" href="#"><strong>LOG IN</strong></a>
           </Link>
           <Link to="/register">
-            <button
-              className="btn btn-warning  text-uppercase"
-              style={loginBtn}
-            >
-              Sign Up
-            </button>
+          <a class="navbtn nav-link active" aria-current="page" href="#"><strong>SIGN UP</strong></a>
           </Link>
         </div>
       </>
@@ -71,14 +60,13 @@ export const Navbar = () => {
             REX-ROUNDER
           </span>
         </Link>
+        <Link to="/" class="navbtn nav-link active" aria-current="page" href="#"><strong>Home</strong></Link>
+        <a class="navbtn nav-link active" aria-current="page" href="#"><strong>Gallery</strong></a>
+        <a class="navbtn nav-link active" aria-current="page" href="#"><strong>About us</strong></a>
+        <a class="navbtn nav-link active" aria-current="page" href="#"><strong>Contact</strong></a>
 
-
-
-        <div className="ml-auto d-flex">
-
- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            USERNAME
+          <a class="navbtn nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <strong>USERNAME</strong>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -86,23 +74,15 @@ export const Navbar = () => {
             <li><hr class="dropdown-divider"/></li>
             <li><a onClick={() => setLoggedIn(false)} class="dropdown-item" href="#">Logout</a></li>
           </ul>
-        </li>
+        
+
+
+        <div className="ml-auto d-flex">
+
+ 
 
           
-          <Link className="me-2" to="/profile">
-            <button className="btn btn-light  text-uppercase" style={btnWidth}>
-              Profile
-            </button>
-          </Link>
-          <Link to="/">
-            <button
-              onClick={() => setLoggedIn(false)}
-              className="btn btn  text-uppercase"
-              style={btnWidth}
-            >
-              Logout
-            </button>
-          </Link>
+          
         </div>
       </>
     );

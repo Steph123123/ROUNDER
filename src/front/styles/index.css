@@ -24,15 +24,45 @@ footer {
 }
 
 .hello {
-    color: rgb(25, 109, 121);
+    color: rgb(32, 158, 158);
     
     
+}
+
+
+/* NAVBAR*/
+.navbtn{
+    color:rgb(32, 158, 158)
 }
 
 
 
 
 
+/*LOGIN*/
+.login{
+    background-image: url(https://img.motoryracing.com/noticias/portada/25000/25794-n.jpg);
+}
+
+.imputs{
+    background-color: rgb(74, 139, 139);
+    width: 40%;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+    border-style: solid;
+    border-color: black;
+}
+.helpinline{
+    color:#2d3f3d
+    
+}
+.submitlog{
+    background-color: #2d3f3d;
+    width: 10rem;
+    border-style: solid;
+    border-color: black;
+}
 
 
 
@@ -42,7 +72,7 @@ footer {
 /* REGISTRO*/
 
 .registro {
-    background-color: #999999;
+    background-color: rgb(184, 184, 184);
 }
 .reglabel {
     font-weight: bold;
@@ -92,7 +122,7 @@ body {
 .circuitimg {
     padding: 5rem;
 }
-.circcard{
+.circard{
     margin-bottom: 3rem;
 }
 

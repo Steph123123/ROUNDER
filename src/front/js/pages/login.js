@@ -11,15 +11,16 @@ export const Login = () => {
   console.log(store.isLoggedIn)
 
   return (
-    <div className="container text-center justify-content-center">
+    <div className="login container text-center justify-content-center">
       <h1>LOGIN</h1>
+      
 	  
-      <div className="d-flex justify-content-center mt-5">
-        <form>
-          <div class="row g-3 align-items-center ">
+      <div className=" d-flex justify-content-center mt-5">
+        <form className="imputs">
+          <div class=" row g-3 align-items-center ">
             <div class="col-auto">
               <label for="inputPassword6" class="col-form-label">
-                Email
+              <strong>Email</strong>
               </label>
             </div>
             <div class="col-auto">
@@ -41,7 +42,7 @@ export const Login = () => {
           <div class="row g-3 align-items-center mt-3">
             <div class="col-auto">
               <label for="inputPassword6" class="col-form-label">
-                Password
+              <strong>Password</strong>
               </label>
             </div>
             <div class="col-auto">
@@ -56,7 +57,7 @@ export const Login = () => {
               />
             </div>
             <div class="col-auto">
-              <span id="passwordHelpInline" class="form-text">
+              <span id="passwordHelpInline" class="helpinline form-text">
                 Must be 8-20 characters long.
               </span>
             </div>
@@ -69,8 +70,8 @@ export const Login = () => {
     </div>
 
 
-          <button type="submit" className="btn btn-primary mt-5 mb-5" onClick={(e)=> {e.preventDefault(); actions.login(email,password)}}>
-            Submit
+          <button type="submit" className="submitlog btn btn-primary mt-5 mb-5" onClick={(e)=> {e.preventDefault(); actions.login(email,password)}}>
+            <strong>Submit</strong>
           </button>
         </form>
       </div>
