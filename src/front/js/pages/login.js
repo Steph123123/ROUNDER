@@ -69,7 +69,7 @@ export const Login = () => {
     </div>
 
 
-          <button type="submit" className="btn btn-primary mt-5 mb-5" onClick={()=> actions.login(email,password)}>
+          <button type="submit" className="btn btn-primary mt-5 mb-5" onClick={(e)=> {e.preventDefault(); actions.login(email,password)}}>
             Submit
           </button>
         </form>
