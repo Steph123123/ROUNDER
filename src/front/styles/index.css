@@ -118,7 +118,21 @@ body {
     width: 10rem;
 }
 
+/*CIRCUITCAR*/
 
+.morebtn {
+    margin-left: 75%;
+    margin-bottom: 1rem;
+}
+
+.circuitcard{
+    margin-left: 3rem;
+
+    
+}
+.circcards{
+    margin-left: 3%;
+}
 
 
 
