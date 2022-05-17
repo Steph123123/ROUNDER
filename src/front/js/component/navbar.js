@@ -9,7 +9,7 @@ export const Navbar = () => {
 
   const fontStyles = {
     fontFamily: "Helvetica",
-    color: "#3F9E9E",
+    color: "#00bfd8",
   };
 
   const btnWidth = {
@@ -61,18 +61,24 @@ export const Navbar = () => {
           </span>
         </Link>
         <Link to="/" class="navbtn nav-link active" aria-current="page" href="#"><strong>Home</strong></Link>
-        <a class="navbtn nav-link active" aria-current="page" href="#"><strong>Gallery</strong></a>
-        <a class="navbtn nav-link active" aria-current="page" href="#"><strong>About us</strong></a>
+        <Link to="/profile" class="navbtn nav-link active" aria-current="page" href="#"><strong>Gallery</strong></Link>
+        <Link to="/aboutus" class="navbtn nav-link active" aria-current="page" href="#"><strong>About us</strong></Link>
         <a class="navbtn nav-link active" aria-current="page" href="#"><strong>Contact</strong></a>
 
           <a class="navbtn nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <strong>USERNAME</strong>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="12" cy="12" r="9" />
+  <circle cx="12" cy="10" r="3" />
+  <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
+</svg><strong>USERNAME</strong>
           </a>
+        
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><Link to="/profile" class="dropdown-item" href="#">Profile</Link></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"/></li>
-            <li><a onClick={() => setLoggedIn(false)} class="dropdown-item" href="#">Logout</a></li>
+            <li><Link to="/" onClick={() => setLoggedIn(false)} class="dropdown-item" href="#">Logout</Link></li>
           </ul>
         
 

@@ -8,16 +8,16 @@ export const Profile = () => {
 
 	return (
 		<div className="profcont container text-center mt-5">
-			<h1>PROFILE</h1>
+			
 			
 			<div class="card mb-3 w-100 bg-secondary" >
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvts5aHBstDkR8PigS4RmZkbZy78zpZoSuOw&usqp=CAU" class=" userimg img-fluid  " alt="..."/>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrn7U0EtnXIezoFaP1288diyBg1uPZsSTy_w&usqp=CAU" class=" userimg img-fluid  " alt="..."/>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">USERNAME</h5>
+        <h5 class="username card-title">USERNAME</h5>
         <form>
   <fieldset disabled>
     
@@ -41,7 +41,7 @@ export const Profile = () => {
     </div>
 	
     
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="" class="editbtn btn "><strong>EDIT</strong></button>
   </fieldset>
 </form>
       </div>
@@ -50,24 +50,42 @@ export const Profile = () => {
 </div>
 
 
-<div class="card">
-  <h5 class="card-header">LAST ROUNDS</h5>
+<div class="lastcard card">
+  <h5 class="lastrounds card-header">LAST ROUNDS</h5>
   <div class=" d-flex card-body">
-    <h5 class="card-title">MOTO</h5>
-    <p class="card-text ms-5">CIRCUITO</p>
-    <a href="#" class="btn btn-primary ms-5">REPEAT</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-motorbike" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="5" cy="16" r="3" />
+  <circle cx="19" cy="16" r="3" />
+  <path d="M7.5 14h5l4 -4h-10.5m1.5 4l4 -4" />
+  <path d="M13 6h2l1.5 3l2 4" />
+</svg>
+    <p class="card-text ms-5">CIRCUIT</p>
+    <a href="#" class="repeatbtn btn  ms-5">REPEAT</a>
   </div>
 
   <div class=" d-flex card-body">
-    <h5 class="card-title">MOTO</h5>
-    <p class="card-text ms-5">CIRCUITO</p>
-    <a href="#" class="btn btn-primary ms-5">REPEAT</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-motorbike" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="5" cy="16" r="3" />
+  <circle cx="19" cy="16" r="3" />
+  <path d="M7.5 14h5l4 -4h-10.5m1.5 4l4 -4" />
+  <path d="M13 6h2l1.5 3l2 4" />
+</svg>
+    <p class="card-text ms-5">CIRCUIT</p>
+    <a href="#" class="repeatbtn btn  ms-5">REPEAT</a>
   </div>
 
   <div class=" d-flex card-body">
-    <h5 class="card-title">MOTO</h5>
-    <p class="card-text ms-5">CIRCUITO</p>
-    <a href="#" class="btn btn-primary ms-5">REPEAT</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-motorbike" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="5" cy="16" r="3" />
+  <circle cx="19" cy="16" r="3" />
+  <path d="M7.5 14h5l4 -4h-10.5m1.5 4l4 -4" />
+  <path d="M13 6h2l1.5 3l2 4" />
+</svg>
+    <p class="card-text ms-5">CIRCUIT</p>
+    <a href="#" class="repeatbtn btn  ms-5">REPEAT</a>
   </div>
 
   

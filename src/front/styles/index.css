@@ -24,7 +24,7 @@ footer {
 }
 
 .hello {
-    color: rgb(32, 158, 158);
+    color: #00bfd8;
     
     
 }
@@ -32,7 +32,7 @@ footer {
 
 /* NAVBAR*/
 .navbtn{
-    color:rgb(32, 158, 158)
+    color:#00bfd8
 }
 
 
@@ -45,7 +45,7 @@ footer {
 }
 
 .imputs{
-    background-color: rgb(74, 139, 139);
+    background-color: #9b9f9f;
     width: 40%;
     padding: 2rem;
     border-radius: 1rem;
@@ -80,7 +80,7 @@ footer {
 }
 
 .regbtn {
-    background-color: rgb(25, 109, 121) ;
+    background-color: #00bfd8 ;
     margin-left: 40%;
     width: 20rem;
     margin-bottom: 5rem;
@@ -105,10 +105,32 @@ body {
     background-color: rgb(184, 184, 184);
 }
 
+.username{
+    color: #00bfd8;
+    font-size: 3rem;
+
+}
 .userimg{
-    border-radius: 10rem;
+    border-radius: 1rem;
     margin-top: 7rem;
     
+}
+.editbtn{
+    background-color: #00bfd8;
+    width: 10rem;
+    color: rgb(0, 0, 0);
+}
+.lastcard{
+    border-style: solid;
+    border-color: #2d3f3d;
+}
+
+.lastrounds{
+    background-color: #00bfd8;
+    color:rgb(48, 61, 61)
+}
+.repeatbtn {
+    background-color: #00bfd8;
 }
 
 
@@ -135,7 +157,7 @@ body {
 }
 
 .circuitcard {
-    background-color: rgb(61, 139, 139);
+    background-color: #00bfd8;
     margin-bottom: 3rem;
 }
 .motocards {
@@ -143,7 +165,7 @@ body {
 }
 
 .motobut{
-    background-color: #049e8a;
+    background-color: #00bfd8;
     margin-bottom: 3rem;
     width: 10rem;
 }
