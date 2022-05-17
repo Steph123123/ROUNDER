@@ -29,7 +29,7 @@ export const Navbar = () => {
   const regularNavbar = () => {
     return (
       <>
-        <Link className="text-decoration-none" to="/home">
+        <Link className=" text-decoration-none" to="/home">
           <span
             className="navbar-brand mb-0 h1 fs-1 fw-bolder text-uppercase "
             style={fontStyles}
@@ -65,7 +65,7 @@ export const Navbar = () => {
         <Link to="/aboutus" class="navbtn nav-link active" aria-current="page" href="#"><strong>About us</strong></Link>
         <Link to="/contact" class="navbtn nav-link active" aria-current="page" href="#"><strong>Contact</strong></Link>
 
-          <a class="usernamenavbtn me-5 nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="usernamenavbtn  nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <circle cx="12" cy="12" r="9" />
