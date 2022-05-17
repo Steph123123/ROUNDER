@@ -61,11 +61,11 @@ export const Navbar = () => {
           </span>
         </Link>
         <Link to="/" class="navbtn nav-link active" aria-current="page" href="#"><strong>Home</strong></Link>
-        <Link to="/profile" class="navbtn nav-link active" aria-current="page" href="#"><strong>Gallery</strong></Link>
+        
         <Link to="/aboutus" class="navbtn nav-link active" aria-current="page" href="#"><strong>About us</strong></Link>
-        <a class="navbtn nav-link active" aria-current="page" href="#"><strong>Contact</strong></a>
+        <Link to="/contact" class="navbtn nav-link active" aria-current="page" href="#"><strong>Contact</strong></Link>
 
-          <a class="navbtn nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="usernamenavbtn me-5 nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <circle cx="12" cy="12" r="9" />

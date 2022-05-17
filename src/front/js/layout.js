@@ -7,6 +7,8 @@ import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { Profile } from "./pages/profile";
 import { Circuit } from "./pages/circuit";
+import { Contact } from "./pages/contact";
+import { Aboutus } from "./pages/aboutus";
 
 import injectContext from "./store/appContext";
 
@@ -28,6 +30,14 @@ const Layout = () => {
 					<Switch>
 					<Route exact path="/">
 							<Home />
+							
+						</Route>
+						<Route exact path="/aboutus">
+							<Aboutus />
+							
+						</Route>
+						<Route exact path="/contact">
+							<Contact />
 							
 						</Route>
 						<Route exact path="/login">

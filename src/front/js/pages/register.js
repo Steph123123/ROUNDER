@@ -35,7 +35,7 @@ export const Register = () => {
             </label>
             <input
               type="text"
-              className="  form-control"
+              className=" inputsign form-control"
               style={input}
               placeholder="Name"
               aria-label="First name"
@@ -50,7 +50,7 @@ export const Register = () => {
             </label>
             <input
               type="text"
-              className=" form-control"
+              className="inputsign form-control"
               style={input}
               placeholder="Last name"
               aria-label="Last name"
@@ -68,7 +68,7 @@ export const Register = () => {
             </label>
             <input
               type="text"
-              className=" form-control"
+              className="inputsign form-control"
               style={input}
               placeholder="User Name"
               aria-label="User Name"
@@ -83,7 +83,7 @@ export const Register = () => {
             </label>
             <input
               type="text"
-              className="  form-control"
+              className=" inputsign form-control"
               style={input}
               placeholder="DNI"
               aria-label="dni"
@@ -100,7 +100,7 @@ export const Register = () => {
             </label>
             <input
               type="email"
-              className=" form-control"
+              className="inputsign form-control"
               style={input}
               placeholder="e-mail"
               aria-label="email"
@@ -115,7 +115,7 @@ export const Register = () => {
             </label>
             <input
               type="password"
-              className=" form-control"
+              className="inputsign form-control"
               style={input}
               placeholder="Password"
               aria-label="Password"
@@ -127,7 +127,7 @@ export const Register = () => {
         </div>
         <button
           type="button"
-          className="btn btn-primary"
+          className="signbtn btn btn-primary"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
           onClick={() => {
@@ -166,7 +166,7 @@ export const Register = () => {
                 >
                   Close
                 </button>
-                <button type="button" class="btn btn-primary">
+                <button type="button" class=" btn btn-primary">
                   Save changes
                 </button>
               </div>
