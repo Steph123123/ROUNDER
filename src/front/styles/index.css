@@ -46,6 +46,8 @@ footer {
 /*LOGIN*/
 .login{
     background-image: url(https://img.motoryracing.com/noticias/portada/25000/25794-n.jpg);
+    width: 100%;
+    
 }
 
 .imputs{
@@ -206,6 +208,20 @@ body {
 
 
 
-/* FOOTER*/
+/* MODAL*/
+.modalbody{
+    background-color: #00bfd8;
+}
+.modalreserve{
+    background-color: #00bfd8;
+    border-color: #00bfd8;
+}
+.modalclose{
+    background-color: #8d8d8d;
+    border-color: #8d8d8d;
+}
+.modalfooter{
+    background-color:#2d3f3d;
+}
 
- 
+ /* FOOTER*/

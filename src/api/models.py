@@ -18,6 +18,8 @@ class User(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     moto = db.relationship("Moto")
     reserve = db.relationship("Reserve", back_populates="user")
+    profile_id = db.Column(db.Integer, db.ForeignKey('profile.id'),
+        nullable=False)
 
 
     def __repr__(self):
@@ -101,8 +103,31 @@ class Reserve(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship("User", back_populates="reserve")
     moto = db.relationship("Moto", back_populates="reserve")
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "reservation_date" : self.reservarion_date,
+            "user_id" : self.user_id,
+            "user" : self.user,
+            "moto" : self.moto
+
+
+        }
+
     
 
+class Profile(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    profileimg = db.Column(db.String(1000), unique=False, nullable=False)
+    user = db.relationship('User', backref='profile')
+    
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "profileimg" : self.profileimg   
+        }
 
 
 

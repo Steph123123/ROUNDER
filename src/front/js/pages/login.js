@@ -11,7 +11,7 @@ export const Login = () => {
   console.log(store.isLoggedIn)
 
   return (
-    <div className="login container text-center justify-content-center">
+    <div className="login text-center justify-content-center">
       <h1>LOGIN</h1>
       
 	  

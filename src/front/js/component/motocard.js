@@ -23,7 +23,7 @@ export const Motocard = (prop) => {
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
-              Modal title
+              Ready for a round? 
             </h5>
             <button
               type="button"
@@ -32,20 +32,16 @@ export const Motocard = (prop) => {
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">
+          <div class="modalbody modal-body">
             <label className="label">Dia</label>
             <input type="datetime-local" className="input" />
             
           </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
+          <div class="modalfooter modal-footer">
+          <button type="button" class="modalclose btn btn-primary">
               CLOSE
             </button>
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="modalreserve btn btn-primary">
               RESERVE
             </button>
           </div>
