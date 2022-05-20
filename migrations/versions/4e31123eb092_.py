@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 3859b982fb21
+Revision ID: 4e31123eb092
 Revises: 
-Create Date: 2022-05-13 19:38:41.910887
+Create Date: 2022-05-20 19:40:42.757749
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '3859b982fb21'
+revision = '4e31123eb092'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -22,10 +22,15 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=80), nullable=False),
     sa.Column('place', sa.String(length=200), nullable=False),
-    sa.Column('description', sa.String(length=500), nullable=False),
+    sa.Column('description', sa.String(length=1000), nullable=False),
     sa.Column('image', sa.String(length=200), nullable=False),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('description')
+    )
+    op.create_table('profile',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('profileimg', sa.String(length=1000), nullable=False),
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('user',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -35,6 +40,8 @@ def upgrade():
     sa.Column('lastname', sa.String(length=80), nullable=False),
     sa.Column('dni', sa.String(length=10), nullable=False),
     sa.Column('username', sa.String(length=80), nullable=False),
+    sa.Column('profile_id', sa.Integer(), nullable=False),
+    sa.ForeignKeyConstraint(['profile_id'], ['profile.id'], ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('dni'),
     sa.UniqueConstraint('email'),
@@ -56,6 +63,7 @@ def upgrade():
     sa.Column('description', sa.String(length=200), nullable=False),
     sa.Column('price', sa.Integer(), nullable=False),
     sa.Column('image', sa.String(length=1000), nullable=False),
+    sa.Column('stripe_id', sa.String(length=1000), nullable=False),
     sa.Column('circuito_id', sa.Integer(), nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=True),
     sa.Column('reserve_id', sa.Integer(), nullable=True),
@@ -72,5 +80,6 @@ def downgrade():
     op.drop_table('moto')
     op.drop_table('reserve')
     op.drop_table('user')
+    op.drop_table('profile')
     op.drop_table('circuito')
     # ### end Alembic commands ###

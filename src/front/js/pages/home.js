@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 
 import "../../styles/home.css";
 import { Circuitcard } from "../component/circuitcard";
+import { Maps } from "../component/maps";
 
 
 export const Home = () => {
@@ -32,6 +33,7 @@ export const Home = () => {
       <div className="container mx-auto">  
       <div classname=""> 
       <Circuitcard/>
+      
 </div>   
       </div> 
     

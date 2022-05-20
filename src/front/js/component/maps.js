@@ -1,23 +1,29 @@
-import react from "react";
-import {
-    GoogleMap,
-    withScriptjs,
-    withGoogleMap
+import React from "react";
+import { Context } from "../store/appContext";
+import "../../styles/home.css";
+import PropTypes from "prop-types";
 
-}from "react-google-maps";
 
-const Map = (props)=>{
-    return (
-    <GoogleMap 
-    defaultZoom = {10}
-    defaultCenter = {{lat:-34.397 , lng: 150.644 }}
-     />
+export const Maps = (props) => {
+  const url = props.place + "&output=embed";
+  return (
+ <div className="w-100">
+  <iframe
+    width="100%"
+    height="200px"
+    frameborder="0"
+    target="_parent"
+    scrolling="no"
+    marginheight="0"
+    marginwidth="0"
+    src={url}
+  >
+    
+  </iframe>
+</div>
+  );
+};
 
-    );
-}
-
-export default withScriptjs(
-    withGoogleMap(
-        Map
-    )
-)
+Maps.propTypes = {
+    place: PropTypes.string,
+  };
