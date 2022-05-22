@@ -83,3 +83,21 @@ def getmoto(id):
     return jsonify(moto_id), 200 
 
     
+@api.route("/profileimg" , methods=["POST"])
+def profileimg():
+    image = request.files['File']
+    if image is None:
+        return jsonify({"msg": "Error to get image"}), 400
+
+    cloudinary.uploader.upload(image)
+    profileimg= upload_result["secure_url"]
+    uploadimg = User(profileimg = profileimg)
+    db.session.add(uploadimg)
+    db.session.commit()
+
+    return jsonify({"msg":"Usuario creado! Ahora, inicia sesión."}), 200
+
+   
+
+    
+

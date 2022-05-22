@@ -1,10 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 
 import "../../styles/home.css";
 
 export const Profile = () => {
 	const { store, actions } = useContext(Context);
+  const [file, setFile] = useState();
+	const profileimg= () => {
+		const formData = new FormData();
+		formData.append("File", file);
+		actions.profileimg(formData);
+	};
 
 	return (
 		<div className="profcont container text-center mt-5">
@@ -19,6 +25,10 @@ export const Profile = () => {
       <div class="card-body">
         <h5 class="username card-title">USERNAME</h5>
         <form>
+        <div class="input-group">
+  <input type="file" className=" editbtd form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"/>
+  <button class="btn btn-outline-secondary" onClick={()=>profileimg} type="button" id="inputGroupFileAddon04">Button</button>
+</div>
   <fieldset disabled>
     
     <div class="mb-3 ">

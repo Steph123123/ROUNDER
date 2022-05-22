@@ -14,7 +14,7 @@ export const Circuitcard = () => {
       {store.circuit.map((circuitval) => (
         <div
           key={circuitval.id}
-          className="card mb-3"
+          className="cardcirc card mb-3"
           style={{ maxWidth: "540px" }}
         >
           <div className="row g-0">

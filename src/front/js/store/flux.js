@@ -86,6 +86,24 @@ const getState = ({ getStore, getActions, setStore }) => {
         console.log("Error loading message from backend", data);
       },
     },
+    profileimg: async (formData) => {
+      // fetching data from the backend
+      const response = await fetch(
+        process.env.BACKEND_URL + "/api/profile",
+        {
+          method: "POST",
+          body:  formData,
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`
+          },
+        }
+      );
+      const data = await response.json();
+      //const data = await setStore({ message: data.message }) para guardar informacion en el store
+      //.catch(error =>  verificar si hay errores
+      console.log("Error loading message from backend", data);
+    },
   };
 };
 
