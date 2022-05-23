@@ -236,5 +236,18 @@ body {
     background-color: #def6f9;
 
 }
+.abouth1{
+    margin-bottom: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #31757c;
+}
+.videoaout{
+    width: 60%;
+}
+.pabout{
+    width: 40%;
+    margin-left: 2rem;
+    font-size: 25px;
+}
 
  /* FOOTER*/
