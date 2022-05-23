@@ -250,4 +250,27 @@ body {
     font-size: 25px;
 }
 
+/*CONTACT*/
+.jumbocontact {
+    background-color: #def6f9;
+
+}
+.contacth1{
+    padding-top: 5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #31757c;
+}
+.ppp {
+    margin: 3rem;
+    background-color: #b2b9b8;
+    border-radius: 1rem;
+    width: 30%;
+    height: 10rem;
+    padding: 2rem;
+    font-weight: bold;
+
+}
+
+
+
  /* FOOTER*/
