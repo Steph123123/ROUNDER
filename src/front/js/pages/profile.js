@@ -6,7 +6,7 @@ import "../../styles/home.css";
 export const Profile = () => {
 	const { store, actions } = useContext(Context);
   const [file, setFile] = useState();
-	const profileimg= () => {
+	const profileimage= () => {
 		const formData = new FormData();
 		formData.append("File", file);
 		actions.profileimg(formData);
@@ -17,7 +17,7 @@ export const Profile = () => {
 			
 			
 			<div class="card mb-3 w-100 bg-secondary" >
-  <div class="row g-0">
+  <div class=" imgprof row g-0">
     <div class="col-md-4">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrn7U0EtnXIezoFaP1288diyBg1uPZsSTy_w&usqp=CAU" class=" userimg img-fluid  " alt="..."/>
     </div>
@@ -26,8 +26,8 @@ export const Profile = () => {
         <h5 class="username card-title">USERNAME</h5>
         <form>
         <div class="input-group">
-  <input type="file" className=" editbtd form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"/>
-  <button class="btn btn-outline-secondary" onClick={()=>profileimg} type="button" id="inputGroupFileAddon04">Button</button>
+  <input type="file" className=" editbtd form-control" onChange={(e)=> setFile(e.target.files[0])} id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"/>
+  <button class="btn btn-outline-secondary" onClick={()=>profileimage()} type="button" id="inputGroupFileAddon04">Button</button>
 </div>
   <fieldset disabled>
     

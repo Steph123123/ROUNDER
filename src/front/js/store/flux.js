@@ -79,7 +79,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
         );
         const data = await response.json();
-        localStorage.setItem("token", data.token);
+        localStorage.setItem("token", data);
         setStore({ isLoggedIn: true });
         //const data = await setStore({ message: data.message }) para guardar informacion en el store
         //.catch(error =>  verificar si hay errores

@@ -18,8 +18,7 @@ class User(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     moto = db.relationship("Moto")
     reserve = db.relationship("Reserve", back_populates="user")
-    profile_id = db.Column(db.Integer, db.ForeignKey('profile.id'),
-        nullable=False)
+    profile_id = db.Column(db.Integer, db.ForeignKey('profile.id'))
 
 
     def __repr__(self):
@@ -119,7 +118,7 @@ class Reserve(db.Model):
 
 class Profile(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    profileimg = db.Column(db.String(1000), unique=False, nullable=False)
+    profileimg = db.Column(db.String(1000))
     user = db.relationship('User', backref='profile')
     
 

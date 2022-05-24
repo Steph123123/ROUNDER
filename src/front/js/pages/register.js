@@ -25,7 +25,7 @@ export const Register = () => {
     <div className="containerlfuid">
       <div class="jumboregist mt-4 p-5   rounded">
         <h1 className="h1register">Tell us something sbout you...</h1>
-        <p>...</p>
+        <p>Un párrafo, también llamado parágrafo, es una unidad comunicativa formada por un conjunto de oraciones secuenciales que trata un mismo tema. Está compuesto por un conjunto de oraciones que tienen cierta unidad temática o que, sin tenerla, se enuncian juntas</p>
       </div>
       <div className=" registro">
         <div className=" col-3"></div>
