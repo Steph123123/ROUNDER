@@ -23,6 +23,10 @@ export const Register = () => {
 
   return (
     <div className="containerlfuid">
+      <div class="jumboregist mt-4 p-5   rounded">
+        <h1 className="h1register">Tell us something sbout you...</h1>
+        <p>...</p>
+      </div>
       <div className=" registro">
         <div className=" col-3"></div>
         <div className="regform row">

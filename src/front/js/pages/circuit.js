@@ -74,7 +74,7 @@ export const Circuit = () => {
                 onClick={() => {
                   actions.getmotobyid(circuitval.id);
                 }}
-                className="btn btn-dark"
+                className="container btn btn-dark"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
               >

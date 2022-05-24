@@ -13,7 +13,7 @@ export const Motocard = (prop) => {
   // }, []);
   return (
     <div
-      class="motocard modal fade"
+      class="motocard  modal fade"
       id="exampleModal"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
