@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       circuit: [],
       onecircuit: [],
       circuitmoto: [],
+      user:{},
       onemoto: [],
       isLoggedIn: false,
     },
@@ -103,6 +104,23 @@ const getState = ({ getStore, getActions, setStore }) => {
       //const data = await setStore({ message: data.message }) para guardar informacion en el store
       //.catch(error =>  verificar si hay errores
       console.log("Error loading message from backend", data);
+    },
+    editUser: async (user) => {
+      try {
+        let body = new FormData();
+        for (let key in user) {
+          body.append(key, user[key]);
+        }
+        const resp = await fetch( process.env.BACKEND_URL + "/api/profileuser", {
+          method: "PUT",
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+          body: body,
+        });
+        const data = await resp.json();
+        setStore({ user: data.user });
+      } catch (e) { }
     },
   };
 };

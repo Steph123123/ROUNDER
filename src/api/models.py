@@ -19,6 +19,7 @@ class User(db.Model):
     moto = db.relationship("Moto")
     reserve = db.relationship("Reserve", back_populates="user")
     profile_id = db.Column(db.Integer, db.ForeignKey('profile.id'))
+    profile_picture = db.Column(db.String(200))
 
 
     def __repr__(self):

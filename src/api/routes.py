@@ -99,7 +99,47 @@ def profileimg():
 
     return jsonify({"msg":"Usuario creado! Ahora, inicia sesión."}), 200
 
-   
 
+
+   
+@api.route("/profileuser" , methods=["PUT"])
+@jwt_required()
+def profileuser():
+    userid=get_jwt_identity()
+    user=User.query.get(userid)
+    body_username = request.form.get("username", None)
+    if body_username == "" or body_username == None:
+        body_username = "Username"
+    
+    body_lastname = request.form.get("lastname", None)
+    if body_lastname == "" or body_lastname == None:
+        body_lastname = "lastname"
+    
+    body_email = request.form.get("email", None)
+    if body_email == "" or body_email == None:
+        body_email = "email"
+    
+    body_password = request.form.get("", None)
+    if body_password == "" or body_password == None:
+        body_password = "password"
+
+    body_dni = request.form.get("dni", None)
+    if body_dni == "" or body_dni == None:
+        body_dni= "dni"
+
+    if "profile_picture" in request.files:
+        body_profile_picture = cloudinary.uploader.upload(
+            request.files['profile_picture'])
+        user.profile_picture = body_profile_picture['secure_url']
+
+    user.username=body_username
+    user.lastname=body_lastname
+    user.dni=body_dni
+    user.email=body_email
+    user.password=body_password
+
+    db.session.commit()
+
+    return jsonify({"msg":"Usuario creado! Ahora, inicia sesión."}), 200
     
 

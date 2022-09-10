@@ -5,12 +5,13 @@ import "../../styles/home.css";
 
 export const Profile = () => {
 	const { store, actions } = useContext(Context);
-  const [file, setFile] = useState();
-	const profileimage= () => {
-		const formData = new FormData();
-		formData.append("File", file);
-		actions.profileimg(formData);
-	};
+  const [user, setUser] = useState();
+	const imgProfile = (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+     setUser({ ...user, profilr_picture: e.target.files[0] })
+
+    }
+  };
 
 	return (
 		<div className="profcont container text-center mt-5">
@@ -26,7 +27,7 @@ export const Profile = () => {
         <h5 class="username card-title">USERNAME</h5>
         <form>
         <div class="input-group">
-  <input type="file" className=" editbtd form-control" onChange={(e)=> setFile(e.target.files[0])} id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"/>
+  <input type="file" className=" editbtd form-control" onChange={imgProfile } id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"/>
   <button class="btn btn-outline-secondary" onClick={()=>profileimage()} type="button" id="inputGroupFileAddon04">Button</button>
 </div>
   <fieldset disabled>
@@ -51,7 +52,7 @@ export const Profile = () => {
     </div>
 	
     
-    <button type="" class="editbtn btn "><strong>EDIT</strong></button>
+    <button type="" class="editbtn btn " onClick={()=>{actions.editUser(user)}}><strong>EDIT</strong></button>
   </fieldset>
 </form>
       </div>
