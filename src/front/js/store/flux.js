@@ -4,13 +4,13 @@ const getState = ({ getStore, getActions, setStore }) => {
       circuit: [],
       onecircuit: [],
       circuitmoto: [],
-      user:{},
+      user: {},
       onemoto: [],
       isLoggedIn: false,
     },
     actions: {
       // Use getActions to call a function within a fuction
-     
+
       getcircuit: async () => {
         const response = await fetch(process.env.BACKEND_URL + "/api/circuit");
         const data = await response.json();
@@ -66,40 +66,36 @@ const getState = ({ getStore, getActions, setStore }) => {
         console.log("Error loading message from backend", data);
       },
       login: async (email, password) => {
-        const response = await fetch(
-          process.env.BACKEND_URL + "/api/login",
-          {
-            method: "POST",
-            body: JSON.stringify({
-              email: email,
-              password: password,
-            }),
-            headers: {
-              "Content-type": "application/json",
-            },
-          }
-        );
-        const data = await response.json();
-        localStorage.setItem("token", data);
-        setStore({ isLoggedIn: true });
-        //const data = await setStore({ message: data.message }) para guardar informacion en el store
-        //.catch(error =>  verificar si hay errores
-        console.log("Error loading message from backend", data);
-      },
-    },
-    profileimg: async (formData) => {
-      // fetching data from the backend
-      const response = await fetch(
-        process.env.BACKEND_URL + "/api/profile",
-        {
+        const response = await fetch(process.env.BACKEND_URL + "/api/login", {
           method: "POST",
-          body:  formData,
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
           headers: {
             "Content-type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`
           },
-        }
-      );
+        });
+        const data = await response.json();
+        localStorage.setItem("token", data.access_token);
+        setStore({ isLoggedIn: data.logged });
+        setStore({ user: data.user });
+        
+        //const data = await setStore({ message: data.message }) para guardar informacion en el store
+        //.catch(error =>  verificar si hay errores
+       
+      },
+   
+    profileimg: async (formData) => {
+      // fetching data from the backend
+      const response = await fetch(process.env.BACKEND_URL + "/api/profile", {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
       const data = await response.json();
       //const data = await setStore({ message: data.message }) para guardar informacion en el store
       //.catch(error =>  verificar si hay errores
@@ -111,7 +107,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         for (let key in user) {
           body.append(key, user[key]);
         }
-        const resp = await fetch( process.env.BACKEND_URL + "/api/profileuser", {
+        console.log("dios te ama ");
+        const resp = await fetch(process.env.BACKEND_URL + "/api/profileuser", {
           method: "PUT",
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -120,8 +117,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
         const data = await resp.json();
         setStore({ user: data.user });
-      } catch (e) { }
+      } catch (e) {}
     },
+  },
   };
 };
 

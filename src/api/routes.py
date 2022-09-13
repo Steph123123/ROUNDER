@@ -46,10 +46,10 @@ def handle_login():
     email=body["email"]
     password=body["password"]
 
-    user=User.query.filter_by (email=email, password=password).first
+    user=User.query.filter_by (email=email, password=password).first()
 
     access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token) 
+    return jsonify({"access_token":access_token, "logged" : True ,"user":user.serialize()}) 
 
 
 @api.route("/circuit/<int:id>", methods = ["GET"])

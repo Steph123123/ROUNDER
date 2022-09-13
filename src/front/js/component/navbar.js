@@ -97,7 +97,7 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-light" style={navbarColor}>
       <div className="container d-flex">
-        {loggedIn ? userLoggedNavbar() : regularNavbar()}
+        {store.isLoggedIn ? userLoggedNavbar() : regularNavbar()}
       </div>
     </nav>
   );
