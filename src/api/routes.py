@@ -132,6 +132,7 @@ def profileuser():
             request.files['profile_picture'])
         user.profile_picture = body_profile_picture['secure_url']
 
+
     user.username=body_username
     user.lastname=body_lastname
     user.dni=body_dni
@@ -141,5 +142,14 @@ def profileuser():
     db.session.commit()
 
     return jsonify({"msg":"Usuario creado! Ahora, inicia sesión."}), 200
+
+       
+@api.route("/verify", methods = ["GET"])
+@jwt_required()
+def verify():
+    user_id=get_jwt_identity()
+    user=User.query.get(user_id)
+    
+    return jsonify(user.serialize()), 200 
     
 

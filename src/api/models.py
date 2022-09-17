@@ -20,6 +20,7 @@ class User(db.Model):
     reserve = db.relationship("Reserve", back_populates="user")
     profile_id = db.Column(db.Integer, db.ForeignKey('profile.id'))
     profile_picture = db.Column(db.String(200))
+    phone=db.Column(db.String(80),unique=True)
 
 
     def __repr__(self):
@@ -33,6 +34,7 @@ class User(db.Model):
             "lastname" : self.lastname,
             "dni" : self.dni,
             "username" : self.username,
+            "phone" : self.phone
 
             # do not serialize the password, its a security breach
         }

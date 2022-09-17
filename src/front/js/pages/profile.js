@@ -8,7 +8,7 @@ export const Profile = () => {
   const [user, setUser] = useState();
   const imgProfile = (e) => {
     if (e.target.files && e.target.files.length > 0) {
-      setUser({ ...user, profilr_picture: e.target.files[0] });
+      setUser({ ...user, profile_picture: e.target.files[0] });
     }
   };
 
@@ -25,7 +25,7 @@ export const Profile = () => {
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="username card-title">USERNAME</h5>
+              <h5 class="username card-title">{store.user.username}</h5>
 
               <div class="input-group">
                 <input
@@ -52,6 +52,7 @@ export const Profile = () => {
                   id="disabledTextInput"
                   class="form-control"
                   placeholder="NAME"
+                  defaultValue={store.user.name}
                 />
               </div>
               <div class="mb-3">
@@ -60,6 +61,7 @@ export const Profile = () => {
                   id="disabledTextInput"
                   class="form-control"
                   placeholder="LAST NAME"
+                  defaultValue={store.user.lastname}
                 />
               </div>
               <div class="mb-3">
@@ -68,6 +70,7 @@ export const Profile = () => {
                   id="disabledTextInput"
                   class="form-control"
                   placeholder="EMAIL"
+                  defaultValue={store.user.email}
                 />
               </div>
               <div class="mb-3">
@@ -76,6 +79,7 @@ export const Profile = () => {
                   id="disabledTextInput"
                   class="form-control"
                   placeholder="PHONE NUMBER"
+                  defaultValue={store.user.phone}
                 />
               </div>
               <div class="mb-3">
@@ -84,6 +88,7 @@ export const Profile = () => {
                   id="disabledTextInput"
                   class="form-control"
                   placeholder="DNI"
+                  defaultValue={store.user.dni}
                 />
               </div>
               <div class="mb-3">
@@ -91,7 +96,8 @@ export const Profile = () => {
                   type="text"
                   id="disabledTextInput"
                   class="form-control"
-                  placeholder="BIRTHDATE"
+                  placeholder="username"
+                  defaultValue={store.user.username}
                 />
               </div>
 

@@ -119,6 +119,17 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ user: data.user });
       } catch (e) {}
     },
+    
+    verify: async () => {
+      const response = await fetch(process.env.BACKEND_URL + "/api/verify",{
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
+      const data = await response.json();
+      setStore({ user: data });
+    },
   },
   };
 };
