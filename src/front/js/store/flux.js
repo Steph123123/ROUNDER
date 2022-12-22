@@ -6,20 +6,21 @@ const getState = ({ getStore, getActions, setStore }) => {
       circuitmoto: [],
       user: {},
       onemoto: [],
+      BACKEND_URL:"https://3001-steph123123-rounder-j5h1eiaty17.ws-eu80.gitpod.io",
       isLoggedIn: false,
     },
     actions: {
       // Use getActions to call a function within a fuction
 
       getcircuit: async () => {
-        const response = await fetch(process.env.BACKEND_URL + "/api/circuit");
+        const response = await fetch(getStore().BACKEND_URL + "/api/circuit");
         const data = await response.json();
         setStore({ circuit: data });
       },
 
       getcircuitbyid: async (id) => {
         const response = await fetch(
-          process.env.BACKEND_URL + "/api/circuit/" + id
+          getStore().BACKEND_URL + "/api/circuit/" + id
         );
         const data = await response.json();
         setStore({ onecircuit: data });
@@ -27,7 +28,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       getmotobyid: async (id) => {
         const response = await fetch(
-          process.env.BACKEND_URL + "/api/moto/" + id
+          getStore().BACKEND_URL + "/api/moto/" + id
         );
         const data = await response.json();
         setStore({ onemoto: data });
@@ -35,7 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       getmotobycircuit: async (id) => {
         const response = await fetch(
-          process.env.BACKEND_URL + "/api/circuitmoto/" + id
+          getStore().BACKEND_URL + "/api/circuitmoto/" + id
         );
         const data = await response.json();
         setStore({ circuitmoto: data });
@@ -44,7 +45,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       register: async (email, password, name, lastname, dni, username) => {
         // fetching data from the backend
         const response = await fetch(
-          process.env.BACKEND_URL + "/api/register",
+          getStore().BACKEND_URL+"/api/register",
           {
             method: "POST",
             body: JSON.stringify({
@@ -66,7 +67,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         console.log("Error loading message from backend", data);
       },
       login: async (email, password) => {
-        const response = await fetch(process.env.BACKEND_URL + "/api/login", {
+        const response = await fetch(getStore().BACKEND_URL + "/api/login", {
           method: "POST",
           body: JSON.stringify({
             email: email,
@@ -88,7 +89,7 @@ const getState = ({ getStore, getActions, setStore }) => {
    
     profileimg: async (formData) => {
       // fetching data from the backend
-      const response = await fetch(process.env.BACKEND_URL + "/api/profile", {
+      const response = await fetch(getStore().BACKEND_URL + "/api/profile", {
         method: "POST",
         body: formData,
         headers: {
@@ -108,7 +109,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           body.append(key, user[key]);
         }
         console.log("dios te ama ");
-        const resp = await fetch(process.env.BACKEND_URL + "/api/profileuser", {
+        const resp = await fetch(getStore().BACKEND_URL + "/api/profileuser", {
           method: "PUT",
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -121,7 +122,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     },
     
     verify: async () => {
-      const response = await fetch(process.env.BACKEND_URL + "/api/verify",{
+      const response = await fetch(getStore().BACKEND_URL + "/api/verify",{
         method: "GET",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
