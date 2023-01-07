@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
+
 import "../../styles/home.css";
 
 export const Aboutus = () => {
@@ -17,7 +18,7 @@ export const Aboutus = () => {
          
           <div className="d-flex">
              <video className="videoaout"
-            src="https://rr1---sn-h5qzen7y.c.drive.google.com/videoplayback?expire=1653437438&ei=vjuNYo-DDKOn0AG-3774Aw&ip=93.176.144.228&cp=QVRKVUVfVlRRSVhPOllfNTNqQ0w0Q0ZUNnNaeTlOZmpMSlpiUHpMYmlZYWt4YUFnUDVQYXkwUVQ&id=288c5ce80f9a64d0&itag=22&source=webdrive&requiressl=yes&mh=RA&mm=32&mn=sn-h5qzen7y&ms=su&mv=m&mvi=1&pl=21&ttl=transient&susc=dr&driveid=1zsTqSkS867K6WvvHFXli-z5wGyDRPK05&app=explorer&mime=video/mp4&vprv=1&prv=1&dur=18.459&lmt=1631644745365841&mt=1653422664&subapp=DRIVE_WEB_FILE_VIEWER&sparams=expire,ei,ip,cp,id,itag,source,requiressl,ttl,susc,driveid,app,mime,vprv,prv,dur,lmt&sig=AOq0QJ8wRAIgbn7UQUr3TuWe3aZ4Q3hAYx0yJFijqM85KdPR9k-7eBoCIDUSchpexrOG-yN30yybWm64bucS56WzJQUzv4PyLXx8&lsparams=mh,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRgIhAP9A-hvaDvP5ZSkUSwVspetZlU4wjZw_13m3orEUbEAFAiEAwBAoG2j5TPWiIqe1dwnXjdiQuFjFZ_4MCjvPkk7UXKI=&cpn=iRFj3zOOE8wIT81x&c=WEB_EMBEDDED_PLAYER&cver=1.20220522.00.00"
+            src="https://res.cloudinary.com/steph13am/video/upload/v1673101162/WhatsApp_Video_2023-01-07_at_14.56.37_tmzi48.mp4"
             controls
           >
             {" "}
