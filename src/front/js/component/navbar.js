@@ -71,7 +71,7 @@ export const Navbar = () => {
   <circle cx="12" cy="12" r="9" />
   <circle cx="12" cy="10" r="3" />
   <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
-</svg><strong>USERNAME</strong>
+</svg><strong>{store.user.name}</strong>
           </a>
         
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

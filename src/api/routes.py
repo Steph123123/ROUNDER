@@ -48,7 +48,7 @@ def handle_login():
 
     user=User.query.filter_by (email=email, password=password).first()
 
-    access_token = create_access_token(identity=email)
+    access_token = create_access_token(identity=user.id)
     return jsonify({"access_token":access_token, "logged" : True ,"user":user.serialize()}) 
 
 
@@ -149,7 +149,9 @@ def profileuser():
 def verify():
     user_id=get_jwt_identity()
     user=User.query.get(user_id)
-    
-    return jsonify(user.serialize()), 200 
+    if user:
+        return jsonify({"user":user.serialize(),"logged":True}), 200 
+    else:
+        return jsonify({"logged":False}), 200 
     
 

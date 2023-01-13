@@ -18,14 +18,14 @@ export const Profile = () => {
         <div class=" imgprof row g-0">
           <div class="col-md-4">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrn7U0EtnXIezoFaP1288diyBg1uPZsSTy_w&usqp=CAU"
+              src={store.user.img}
               class=" userimg img-fluid  "
               alt="..."
             />
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="username card-title">{store.user.username}</h5>
+              <h5 class="username card-title">{store.user.name}</h5>
 
               <div class="input-group">
                 <input

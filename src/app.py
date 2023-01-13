@@ -69,6 +69,14 @@ def serve_any_other_file(path):
     response = send_from_directory(static_file_dir, path)
     response.cache_control.max_age = 0 # avoid cache memory
     return response
+    cloudinary.config( 
+  cloud_name = "sample", 
+  api_key = os.getenv("CLOUDINARY_URL"), 
+  api_secret = os.getenv("  CLOUDINARY_API_SECRET"),
+  secure = True
+
+  
+)
 
 
 # this only runs if `$ python src/main.py` is executed

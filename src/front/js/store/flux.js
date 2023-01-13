@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       circuitmoto: [],
       user: {},
       onemoto: [],
-      BACKEND_URL:"https://3001-steph123123-rounder-dmp9dteznsw.ws-eu81.gitpod.io",
+      BACKEND_URL:"https://3001-steph123123-rounder-jugztpt5jxd.ws-eu82.gitpod.io",
       isLoggedIn: false,
     },
     actions: {
@@ -129,7 +129,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       });
       const data = await response.json();
-      setStore({ user: data });
+      setStore({ user: data.user,isLoggedIn:data.logged });
     },
   },
   };
