@@ -103,6 +103,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       console.log("Error loading message from backend", data);
     },
     editUser: async (user) => {
+      console.log (user)
       try {
         let body = new FormData();
         for (let key in user) {

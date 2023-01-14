@@ -107,9 +107,9 @@ def profileimg():
 def profileuser():
     userid=get_jwt_identity()
     user=User.query.get(userid)
-    body_username = request.form.get("username", None)
-    if body_username == "" or body_username == None:
-        body_username = user.username
+    body_name = request.form.get("name", None)
+    if body_name == "" or body_name == None:
+        body_name = user.name
     
     body_lastname = request.form.get("lastname", None)
     if body_lastname == "" or body_lastname == None:
@@ -134,7 +134,7 @@ def profileuser():
 
     else: 
         body_profile_picture= user.profile_picture
-    user.username=body_username
+    user.name=body_name
     user.lastname=body_lastname
     user.dni=body_dni
     user.email=body_email
