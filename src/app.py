@@ -15,6 +15,9 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 #from models import Person
 
 
@@ -69,10 +72,11 @@ def serve_any_other_file(path):
     response = send_from_directory(static_file_dir, path)
     response.cache_control.max_age = 0 # avoid cache memory
     return response
-    cloudinary.config( 
-  cloud_name = "sample", 
-  api_key = os.getenv("CLOUDINARY_URL"), 
-  api_secret = os.getenv("  CLOUDINARY_API_SECRET"),
+
+cloudinary.config( 
+  cloud_name = "steph13am", 
+  api_key = os.getenv("CLOUDINARY_API_KEY"), 
+  api_secret = os.getenv("CLOUDINARY_API_SECRET"),
   secure = True
 
   

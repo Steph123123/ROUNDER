@@ -53,6 +53,7 @@ export const Profile = () => {
                   class="form-control"
                   placeholder="NAME"
                   defaultValue={store.user.name}
+                  onChange= {(e) => {setUser({ ...user,name: e.target.value })}}
                 />
               </div>
               <div class="mb-3">
@@ -108,7 +109,7 @@ export const Profile = () => {
                   actions.editUser(user);
                 }}
               >
-                <strong>EDIT</strong>
+                <strong>SAVE CHANGES</strong>
               </button>
             </div>
           </div>

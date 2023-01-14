@@ -109,30 +109,31 @@ def profileuser():
     user=User.query.get(userid)
     body_username = request.form.get("username", None)
     if body_username == "" or body_username == None:
-        body_username = "Username"
+        body_username = user.username
     
     body_lastname = request.form.get("lastname", None)
     if body_lastname == "" or body_lastname == None:
-        body_lastname = "lastname"
+        body_lastname = user.lastname
     
     body_email = request.form.get("email", None)
     if body_email == "" or body_email == None:
-        body_email = "email"
+        body_email = user.email
     
     body_password = request.form.get("", None)
     if body_password == "" or body_password == None:
-        body_password = "password"
+        body_password = user.password
 
     body_dni = request.form.get("dni", None)
     if body_dni == "" or body_dni == None:
-        body_dni= "dni"
+        body_dni= user.dni
 
     if "profile_picture" in request.files:
         body_profile_picture = cloudinary.uploader.upload(
             request.files['profile_picture'])
         user.profile_picture = body_profile_picture['secure_url']
 
-
+    else: 
+        body_profile_picture= user.profile_picture
     user.username=body_username
     user.lastname=body_lastname
     user.dni=body_dni
@@ -141,7 +142,7 @@ def profileuser():
 
     db.session.commit()
 
-    return jsonify({"msg":"Usuario creado! Ahora, inicia sesión."}), 200
+    return jsonify({"user":user.serialize(), "msg":"Usuario creado! Ahora, inicia sesión."}), 200
 
        
 @api.route("/verify", methods = ["GET"])

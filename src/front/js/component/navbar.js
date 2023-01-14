@@ -78,7 +78,7 @@ export const Navbar = () => {
             <li><Link to="/profile" class="dropdown-item" href="#">Profile</Link></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"/></li>
-            <li><Link to="/" onClick={() => setLoggedIn(false)} class="dropdown-item" href="#">Logout</Link></li>
+            <li><Link to="/" onClick={() => actions.logout()} class="dropdown-item" href="#">Logout</Link></li>
           </ul>
         
 
