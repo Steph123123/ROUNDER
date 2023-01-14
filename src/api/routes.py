@@ -110,6 +110,10 @@ def profileuser():
     body_name = request.form.get("name", None)
     if body_name == "" or body_name == None:
         body_name = user.name
+
+    body_username = request.form.get("username", None)
+    if body_username == "" or body_username == None:
+        body_username = user.username
     
     body_lastname = request.form.get("lastname", None)
     if body_lastname == "" or body_lastname == None:
@@ -139,6 +143,7 @@ def profileuser():
     user.dni=body_dni
     user.email=body_email
     user.password=body_password
+    user.username=body_username
 
     db.session.commit()
 
