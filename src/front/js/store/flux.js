@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       circuitmoto: [],
       user: {},
       onemoto: [],
-      BACKEND_URL:"https://3001-steph123123-rounder-5u7yb9u1kfs.ws-eu82.gitpod.io",
+      BACKEND_URL:"https://3001-steph123123-rounder-met22knkc34.ws-eu84.gitpod.io",
       isLoggedIn: false,
     },
     actions: {
@@ -79,8 +79,12 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
         const data = await response.json();
         localStorage.setItem("token", data.access_token);
+        console.log(data)
+        if (data.user){
+          setStore({ user: data.user });
+        }
         setStore({ isLoggedIn: data.logged });
-        setStore({ user: data.user });
+        
         
         //const data = await setStore({ message: data.message }) para guardar informacion en el store
         //.catch(error =>  verificar si hay errores

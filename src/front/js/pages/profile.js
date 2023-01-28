@@ -14,23 +14,25 @@ export const Profile = () => {
 
   return (
     <div className="profcont container text-center mt-5">
-      <div class="card mb-3 w-100 bg-secondary">
-        <div class=" imgprof row g-0">
-          <div class="col-md-4">
+      <div className="card mb-3 w-100 bg-secondary">
+        <div className=" imgprof row g-0">
+          <div className="col-md-4  align-middle m-auto">
             <img
               src={store.user.img}
-              class=" userimg img-fluid  "
+              className="rounded-circle "
+              width="300" height="300"
+              
               alt="..."
             />
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="username card-title">{store.user.name}</h5>
+          <div className="col-md-8 ">
+            <div className="card-body mx-auto">
+              <h5 className="username card-title">{store.user.name}</h5>
 
-              <div class="input-group">
+              <div class="input-group w-50 ">
                 <input
                   type="file"
-                  className=" editbtd form-control"
+                  className=" editbtd form-control w-50 "
                   onChange={imgProfile}
                   id="inputGroupFile04"
                   aria-describedby="inputGroupFileAddon04"
@@ -46,21 +48,21 @@ export const Profile = () => {
                 </button>
               </div>
 
-              <div class="mb-3 ">
+              <div className="mb-2 ">
                 <input
                   type="text"
                   id="disabledTextInput"
-                  class="form-control"
+                  className="form-control mt-3 mb-3 w-50"
                   placeholder="NAME"
                   defaultValue={store.user.name}
                   onChange= {(e) => {setUser({ ...user,name: e.target.value })}}
                 />
               </div>
-              <div class="mb-3">
+              <div className="mb-3 ">
                 <input
                   type="text"
                   id="disabledTextInput"
-                  class="form-control"
+                  class="form-control w-50"
                   placeholder="LAST NAME"
                   defaultValue={store.user.lastname}
                 />
@@ -69,7 +71,7 @@ export const Profile = () => {
                 <input
                   type="text"
                   id="disabledTextInput"
-                  class="form-control"
+                  class="form-control w-50"
                   placeholder="EMAIL"
                   defaultValue={store.user.email}
                 />
@@ -78,7 +80,7 @@ export const Profile = () => {
                 <input
                   type="text"
                   id="disabledTextInput"
-                  class="form-control"
+                  class="form-control w-50"
                   placeholder="PHONE NUMBER"
                   defaultValue={store.user.phone}
                 />
@@ -87,7 +89,7 @@ export const Profile = () => {
                 <input
                   type="text"
                   id="disabledTextInput"
-                  class="form-control"
+                  class="form-control w-50"
                   placeholder="DNI"
                   defaultValue={store.user.dni}
                 />
@@ -96,7 +98,7 @@ export const Profile = () => {
                 <input
                   type="text"
                   id="disabledTextInput"
-                  class="form-control"
+                  class="form-control w-50"
                   placeholder="username"
                   defaultValue={store.user.username}
                 />

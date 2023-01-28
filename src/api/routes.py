@@ -34,7 +34,7 @@ def handle_register():
     dni=body["dni"]
     username=body["username"]
 
-    user=User(email=email, password=password, name=name,lastname=lastname, dni=dni, username=username)
+    user=User(email=email, password=password, name=name,lastname=lastname, dni=dni, username=username, profile_picture="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrn7U0EtnXIezoFaP1288diyBg1uPZsSTy_w&usqp=CAU")
     db.session.add(user)
     db.session.commit()
 

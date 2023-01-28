@@ -10,7 +10,7 @@ export const Login = () => {
   const [email,setEmail] =useState("");
   const [password, setPassword] = useState("");
   const history =useHistory()
-  console.log(store.isLoggedIn)
+ 
 
   return (
     <div className="login text-center justify-content-center">
