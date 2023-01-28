@@ -36,9 +36,13 @@ footer {
 }
 .usernamenavbtn{
     color:#00bfd8;
-    margin-right: 10rem;
+    
 }
 
+.imgprof {
+    background-image: url(https://i.pinimg.com/736x/2b/ad/5e/2bad5ee9212d497701141cab53c508f0.jpg);
+    
+}
 
 
 
@@ -130,7 +134,7 @@ footer {
 body {
     
 
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
 }
 
 .username{

@@ -24,12 +24,13 @@ export const Profile = () => {
               
               alt="..."
             />
+            
           </div>
           <div className="col-md-8 ">
-            <div className="card-body mx-auto">
+            <div className="card-body">
               <h5 className="username card-title">{store.user.name}</h5>
 
-              <div class="input-group w-50 ">
+              <div className="input-group w-50 mt-5  m-auto">
                 <input
                   type="file"
                   className=" editbtd form-control w-50 "
@@ -48,7 +49,7 @@ export const Profile = () => {
                 </button>
               </div>
 
-              <div className="mb-2 ">
+              <div className="mb-2 d-flex justify-content-center">
                 <input
                   type="text"
                   id="disabledTextInput"
@@ -58,7 +59,7 @@ export const Profile = () => {
                   onChange= {(e) => {setUser({ ...user,name: e.target.value })}}
                 />
               </div>
-              <div className="mb-3 ">
+              <div className="mb-3 d-flex justify-content-center">
                 <input
                   type="text"
                   id="disabledTextInput"
@@ -67,7 +68,7 @@ export const Profile = () => {
                   defaultValue={store.user.lastname}
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-3 d-flex justify-content-center">
                 <input
                   type="text"
                   id="disabledTextInput"
@@ -76,7 +77,7 @@ export const Profile = () => {
                   defaultValue={store.user.email}
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-3 d-flex justify-content-center">
                 <input
                   type="text"
                   id="disabledTextInput"
@@ -85,7 +86,7 @@ export const Profile = () => {
                   defaultValue={store.user.phone}
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-3 d-flex justify-content-center">
                 <input
                   type="text"
                   id="disabledTextInput"
@@ -94,7 +95,7 @@ export const Profile = () => {
                   defaultValue={store.user.dni}
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-3 d-flex justify-content-center">
                 <input
                   type="text"
                   id="disabledTextInput"

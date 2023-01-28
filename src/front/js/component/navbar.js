@@ -39,10 +39,14 @@ export const Navbar = () => {
         </Link>
         <div className="ml-auto d-flex">
           <Link className="me-2" to="/login">
-          <a class="navbtn nav-link active" aria-current="page" href="#"><strong>LOG IN</strong></a>
+            <a class="navbtn nav-link active" aria-current="page" href="#">
+              <strong>LOG IN</strong>
+            </a>
           </Link>
           <Link to="/register">
-          <a class="navbtn nav-link active" aria-current="page" href="#"><strong>SIGN UP</strong></a>
+            <a class="navbtn nav-link active" aria-current="page" href="#">
+              <strong>SIGN UP</strong>
+            </a>
           </Link>
         </div>
       </>
@@ -60,37 +64,79 @@ export const Navbar = () => {
             REX-ROUNDER
           </span>
         </Link>
-        <Link to="/" class="navbtn nav-link active" aria-current="page" href="#"><strong>Home</strong></Link>
-        
-        <Link to="/aboutus" class="navbtn nav-link active" aria-current="page" href="#"><strong>About us</strong></Link>
-        <Link to="/contact" class="navbtn nav-link active" aria-current="page" href="#"><strong>Contact</strong></Link>
+        <Link
+          to="/"
+          class="navbtn nav-link active"
+          aria-current="page"
+          href="#"
+        >
+          <strong>Home</strong>
+        </Link>
 
-          <a class="usernamenavbtn  nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img
+        <Link
+          to="/aboutus"
+          class="navbtn nav-link active"
+          aria-current="page"
+          href="#"
+        >
+          <strong>About us</strong>
+        </Link>
+        <Link
+          to="/contact"
+          class="navbtn nav-link active"
+          aria-current="page"
+          href="#"
+        >
+          <strong>Contact</strong>
+        </Link>
+
+        <div className="nav-item dropdown ">
+          <a
+            class="usernamenavbtn nav-link dropdown-toggle "
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
               src={store.user.img}
-              class="rounded-circle"
-              width="50" height="50"
+              class="rounded-circle me-2"
+              width="50"
+              height="50"
               alt="..."
             />
+
             <strong>{store.user.name}</strong>
           </a>
-        
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link to="/profile" class="dropdown-item" href="#">Profile</Link></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"/></li>
-            <li><Link to="/" onClick={() => actions.logout()} class="dropdown-item" href="#">Logout</Link></li>
-          </ul>
-        
-
-
-        <div className="ml-auto d-flex">
-
- 
-
-          
-          
+       
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li>
+            <Link to="/profile" class="dropdown-item" href="#">
+              Profile
+            </Link>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              Last Rounds
+            </a>
+          </li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li>
+            <Link
+              to="/"
+              onClick={() => actions.logout()}
+              class="dropdown-item"
+              href="#"
+            >
+              Logout
+            </Link>
+          </li>
+        </ul>
         </div>
+        <div className="ml-auto d-flex"></div>
       </>
     );
   };
