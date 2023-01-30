@@ -117,9 +117,9 @@ export const Navbar = () => {
             </Link>
           </li>
           <li>
-            <a class="dropdown-item" href="#">
+            <Link to="/lastrounds" class="dropdown-item" href="#">
               Last Rounds
-            </a>
+            </Link>
           </li>
           <li>
             <hr class="dropdown-divider" />

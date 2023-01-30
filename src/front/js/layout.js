@@ -16,6 +16,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Register } from "./pages/register";
 import { Login } from "./pages/login";
+import { LastRounds } from "./pages/lastrounds";
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -59,9 +60,14 @@ const Layout = () => {
 						<Route exact path="/single/:theid">
 							<Single />
 						</Route>
+						<Route exact path="/lastrounds">
+							<LastRounds />
+							
+						</Route>
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
+						
 					</Switch>
 					<Footer />
 				</ScrollToTop>

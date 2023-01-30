@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-
+import swal from 'sweetalert';
 import "../../styles/home.css";
+import { useHistory } from "react-router-dom";
 
 export const Register = () => {
   const { store, actions } = useContext(Context);
@@ -12,6 +13,9 @@ export const Register = () => {
   const [dni, setDni] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
+  const [phone, setPhone] = useState("");
+  const [adress, setAdress] = useState("");
+  const history=useHistory()
 
   const input = {
     width: "30rem",
@@ -76,9 +80,41 @@ export const Register = () => {
               style={input}
               placeholder="User Name"
               aria-label="User Name"
-              name="phonenumber"
+              name="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="col mt-2">
+            <label for=" formGroupExampleInput" className="reglabel form-label">
+              {" "}
+              Phone
+            </label>
+            <input
+              type="text"
+              className="inputsign form-control"
+              style={input}
+              placeholder="Phone"
+              aria-label="Phone"
+              name="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+          </div>
+          <div className="col mt-2">
+            <label for=" formGroupExampleInput" className="reglabel form-label">
+              {" "}
+              Adress
+            </label>
+            <input
+              type="text"
+              className="inputsign form-control"
+              style={input}
+              placeholder="Adress"
+              aria-label="Adress"
+              name="adress"
+              value={adress}
+              onChange={(e) => setAdress(e.target.value)}
             />
           </div>
           <div className="col mt-2">
@@ -135,48 +171,16 @@ export const Register = () => {
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
           onClick={() => {
-            actions.register(email, password, name, lastname, dni, username);
+            actions.register(email, password, name, lastname, dni, username,phone,adress);
+            //if (store.mensaje=="Welcome to Rounder!") { 
+              history.replace("/login")
+           // }
           }}
         >
           Send
         </button>
 
-        <div
-          class="modal fade"
-          id="exampleModal"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                  Modal title
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">...</div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button type="button" class=" btn btn-primary">
-                  Save changes
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   );

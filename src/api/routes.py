@@ -33,13 +33,20 @@ def handle_register():
     lastname=body["lastname"]
     dni=body["dni"]
     username=body["username"]
+    phone=body["phone"]
+    adress=body["adress"]
+    user=User.query.filter_by(email=email).first()
+    if not user: 
+        newuser=User(email=email, password=password, name=name,lastname=lastname, dni=dni, username=username, profile_picture="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrn7U0EtnXIezoFaP1288diyBg1uPZsSTy_w&usqp=CAU", phone=phone, adress=adress)
+        db.session.add(newuser)
+        db.session.commit()
+        return jsonify ({"mensaje" : "Welcome to Rounder!"}),200
+    else :
+        return jsonify ({"mensaje":"Failure"}), 400
 
-    user=User(email=email, password=password, name=name,lastname=lastname, dni=dni, username=username, profile_picture="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrn7U0EtnXIezoFaP1288diyBg1uPZsSTy_w&usqp=CAU")
-    db.session.add(user)
-    db.session.commit()
+    
 
-    return jsonify ({"mensaje" : "Welcome to Rounder!"}) 
-
+   
 @api.route("/login" , methods=["POST"])
 def handle_login():
     body=request.get_json()

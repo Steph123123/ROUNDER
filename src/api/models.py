@@ -16,6 +16,7 @@ class User(db.Model):
     lastname = db.Column(db.String(80), unique=False, nullable=False)
     dni = db.Column(db.String(10), unique=True, nullable=False)
     username = db.Column(db.String(80), unique=True, nullable=False)
+    adress = db.Column(db.String(250), nullable=False)
     moto = db.relationship("Moto")
     reserve = db.relationship("Reserve", back_populates="user")
     profile_id = db.Column(db.Integer, db.ForeignKey('profile.id'))
@@ -36,6 +37,7 @@ class User(db.Model):
             "username" : self.username,
             "phone" : self.phone,
             "img":self.profile_picture,
+            "adress":self.adress,
 
             # do not serialize the password, its a security breach
         }

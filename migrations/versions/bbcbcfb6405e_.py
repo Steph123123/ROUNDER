@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 16b7170cab3e
+Revision ID: bbcbcfb6405e
 Revises: 
-Create Date: 2022-05-24 17:39:02.865080
+Create Date: 2023-01-30 17:13:45.879149
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '16b7170cab3e'
+revision = 'bbcbcfb6405e'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -29,7 +29,7 @@ def upgrade():
     )
     op.create_table('profile',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('profileimg', sa.String(length=1000), nullable=False),
+    sa.Column('profileimg', sa.String(length=1000), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('user',
@@ -40,11 +40,15 @@ def upgrade():
     sa.Column('lastname', sa.String(length=80), nullable=False),
     sa.Column('dni', sa.String(length=10), nullable=False),
     sa.Column('username', sa.String(length=80), nullable=False),
-    sa.Column('profile_id', sa.Integer(), nullable=False),
+    sa.Column('adress', sa.String(length=250), nullable=False),
+    sa.Column('profile_id', sa.Integer(), nullable=True),
+    sa.Column('profile_picture', sa.String(length=200), nullable=True),
+    sa.Column('phone', sa.String(length=80), nullable=True),
     sa.ForeignKeyConstraint(['profile_id'], ['profile.id'], ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('dni'),
     sa.UniqueConstraint('email'),
+    sa.UniqueConstraint('phone'),
     sa.UniqueConstraint('username')
     )
     op.create_table('reserve',

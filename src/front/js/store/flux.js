@@ -1,3 +1,5 @@
+import swal from 'sweetalert';
+import { useHistory } from 'react-router-dom';
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
@@ -6,7 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       circuitmoto: [],
       user: {},
       onemoto: [],
-      BACKEND_URL:"https://3001-steph123123-rounder-p5e2aoqn05u.ws-eu84.gitpod.io",
+      BACKEND_URL:"https://3001-steph123123-rounder-mkq03s7df1i.ws-eu84.gitpod.io",
       isLoggedIn: false,
     },
     actions: {
@@ -42,7 +44,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ circuitmoto: data });
       },
 
-      register: async (email, password, name, lastname, dni, username) => {
+      register: async (email, password, name, lastname, dni, username, phone, adress) => {
         // fetching data from the backend
         const response = await fetch(
           getStore().BACKEND_URL+"/api/register",
@@ -55,6 +57,8 @@ const getState = ({ getStore, getActions, setStore }) => {
               lastname: lastname,
               dni: dni,
               username: username,
+              phone: phone,
+              adress: adress
             }),
             headers: {
               "Content-type": "application/json",
@@ -62,8 +66,17 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
         );
         const data = await response.json();
-        //const data = await setStore({ message: data.message }) para guardar informacion en el store
-        //.catch(error =>  verificar si hay errores
+        console.log(data)
+
+        if (data.mensaje == "Failure"){
+          swal({
+            text: "Already exist",
+            icon: "error",
+          });
+        } else if (data.mensaje=="Welcome to Rounder!"){    swal({
+          text: data.mensaje,
+          icon: "success",
+        });}
         console.log("Error loading message from backend", data);
       },
       login: async (email, password) => {
