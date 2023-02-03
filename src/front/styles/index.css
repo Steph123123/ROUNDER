@@ -55,6 +55,7 @@ footer {
 }
 
 .imputs{
+    background-image: url(https://thumbs.dreamstime.com/b/tyre-track-texture-skid-marks-road-surface-31183301.jpg);
     background-color: #ded6d6;
     width: 40%;
     padding: 2rem;
@@ -183,20 +184,36 @@ body {
     margin: 2rem;
 }
 
+
+
 .circuitinfo {
     margin-top: 3rem;
     margin-right: 3rem;
+    margin-bottom: 3rem;
     padding: 3rem;
     background-color: #dcdada;
     border-radius: 1rem;
+    
+    
+    
 }
 
 .circuitcard {
     background-color: #00bfd8;
     margin-bottom: 3rem;
 }
-.motocards {
-    height: 5rem;
+.motocard {
+    background-image: url(https://www.shutterstock.com/image-illustration/finish-line-racing-background-top-260nw-1211857849.jpg);
+    color:#ded6d6;
+    border-color: #000000;
+   
+    
+}
+
+.motodimg {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    
 }
 
 .motobut{

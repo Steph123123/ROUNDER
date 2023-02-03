@@ -48,7 +48,7 @@ class Moto(db.Model):
     marca = db.Column(db.String(80), unique=False, nullable=False)
     modelo = db.Column(db.String(80), unique=False, nullable=False)
     cilindrada = db.Column(db.String(80), unique=False, nullable=False)
-    description = db.Column(db.String(200), unique=False, nullable=False)
+    description = db.Column(db.String(100), unique=False, nullable=False)
     price = db.Column(db.Integer, unique=False, nullable=False)
     image = db.Column(db.String(1000), unique=False, nullable=False)
     stripe_id= db.Column(db.String(1000), unique=False, nullable=False)

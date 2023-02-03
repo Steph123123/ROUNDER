@@ -25,7 +25,7 @@ export const Circuit = () => {
                 alt="..."
               />
             </div>
-            <div class="col-md-8">
+            <div class=" circont col-md-8">
               <div class="circuitinfo card-body">
                 <h5 class="card-title">
                   <strong>{store.onecircuit.name}</strong>
@@ -42,15 +42,15 @@ export const Circuit = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="d-flex ">
         {store.circuitmoto.map((circuitval) => (
           <div
             key={circuitval.id}
-            className="card mb-3"
-            style={{ maxWidth: "540px" }}
+            className="motocard card mb-3 m-auto"
+            style={{ maxWidth: "540px" , maxHeight: "540px" }}
           >
             <div className="row g-0">
-              <div className="col-md-4">
+              <div className="motoimg col-md-4 d-flex">
                 <img
                   src={circuitval.image}
                   className="img-fluid rounded-start"
@@ -59,11 +59,12 @@ export const Circuit = () => {
               </div>
               <div className="col-md-8">
                 <div className="card-body">
-                  <h5 className="card-title">{circuitval.name}</h5>
-                  <p className="card-text">{circuitval.description}</p>
+                  <h5 className="card-title">{circuitval.marca}</h5>
+                  <p className="card-text">{circuitval.modelo}</p>
+                  <p className="card-text">{circuitval.cilindrada}</p>                
                   <p className="card-text">
                     <small className="text-muted">
-                      Last updated 3 mins ago
+                      Aviable
                     </small>
                   </p>
                 </div>
