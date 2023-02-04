@@ -8,19 +8,19 @@ import "../../styles/home.css";
 export const Motocard = (prop) => {
   const { store, actions } = useContext(Context);
   const { id } = useParams();
-  //useEffect(() => {
-  //   actions. getmotobyid(id);
-  // }, []);
+  useEffect(() => {
+     actions. getmotobyid(prop.moto.id);
+   }, []);
   return (
     <div
-      class="motocard  modal fade"
+      class="motocardmodal  modal fade "
       id="exampleModal"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
-        <div class="modal-content">
+      <div class=" reservecont modal-dialog">
+        <div class="reservemod modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
               Ready for a round? 
@@ -33,12 +33,18 @@ export const Motocard = (prop) => {
             ></button>
           </div>
           <div class="modalbody modal-body">
-            <label className="label">Dia</label>
-            <input type="datetime-local" className="input" />
+            <img src={store.onemoto.image}/>
+            <h5>{store.onemoto.modelo}</h5>
+
+            <label className="label "> <strong>Dia</strong></label>
+            <input type="datetime-local" className="input ms-3" 
+             />
+
+            
             
           </div>
           <div class="modalfooter modal-footer">
-          <button type="button" class="modalclose btn btn-primary">
+          <button type="button" class="modalclose btn " data-bs-dismiss="modal">
               CLOSE
             </button>
             <button type="button" class="modalreserve btn btn-primary">
@@ -51,5 +57,5 @@ export const Motocard = (prop) => {
   );
 };
 Motocard.propTypes = {
-  marca: PropTypes.string,
+  moto: PropTypes.object,
 };

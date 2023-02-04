@@ -17,15 +17,15 @@ export const Circuit = () => {
     <div className="circuitcont mt-3">
       <div className=" container text-center justify-content-center">
         <div class="circuitcard card mb-3">
-          <div class=" circinf row ">
-            <div class="col-md-4 ">
+          <div class="  d-flex row ">
+           
               <img
                 src={store.onecircuit.image}
-                className="circuitimg img-fluid rounded-start "
+                className="circuitimg img-fluid rounded-start  col-4 p-5 h-100"
                 alt="..."
               />
-            </div>
-            <div class=" circont col-md-8">
+            
+            <div class="  col-8">
               <div class="circuitinfo card-body">
                 <h5 class="card-title">
                   <strong>{store.onecircuit.name}</strong>
@@ -82,7 +82,7 @@ export const Circuit = () => {
                 More...
               </button>
 
-              <Motocard key={store.onemoto.id} marca={store.onemoto.marca} />
+              <Motocard key={store.onemoto.id} moto={store.onemoto} />
             </div>
           </div>
         ))}

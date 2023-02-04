@@ -171,16 +171,14 @@ body {
 
 /* CIRCUIT PROFILE */
 
-.circuitimg {
-    padding: 5rem;
-}
-.circuitcard{
+
+.circuitcard1{
     margin-bottom: 3rem;
     background-color: #d1e6e9;
 }
 
 .cardcirc{
-    background-color: #c3f7f9;
+    background-color:#00bfd8;
     margin: 2rem;
 }
 
@@ -210,6 +208,12 @@ body {
     
 }
 
+.motocardmodal{
+    height: 30rem; 
+    color: #000000;
+    
+}
+
 .motodimg {
     margin-top: 2rem;
     margin-left: 2rem;
@@ -222,6 +226,15 @@ body {
     width: 10rem;
 }
 
+.reservecont {
+    width: 100%;
+    height: 100%;
+
+}
+.reservemod{
+    width: 100%;
+    height: 100%;
+}
 /*CIRCUITCAR*/
 
 .morebtn {
@@ -234,7 +247,7 @@ body {
 
     
 }
-.circcards{
+.circards{
     margin-left: 3%;
 }
 

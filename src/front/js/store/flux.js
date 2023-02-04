@@ -7,8 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       onecircuit: [],
       circuitmoto: [],
       user: {},
-      onemoto: [],
-      BACKEND_URL:"https://3001-steph123123-rounder-a4jfishf1ga.ws-eu85.gitpod.io",
+      onemoto: {},
+      BACKEND_URL:"https://3001-steph123123-rounder-58dhz5lzsfw.ws-eu85.gitpod.io",
       isLoggedIn: false,
     },
     actions: {

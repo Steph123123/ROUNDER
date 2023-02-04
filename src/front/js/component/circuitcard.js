@@ -21,7 +21,7 @@ export const Circuitcard = () => {
             <div className="circard col-md-4">
               <img
                 src={circuitval.image}
-                className=" img-fluid rounded-start"
+                className=" img-fluid rounded-start mt-3 "
                 alt="..."
               />
             </div>
