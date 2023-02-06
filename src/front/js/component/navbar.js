@@ -29,7 +29,7 @@ export const Navbar = () => {
   const regularNavbar = () => {
     return (
       <>
-        <Link className=" text-decoration-none" to="/home">
+        <Link className=" text-decoration-none" to="/">
           <span
             className="navbar-brand mb-0 h1 fs-1 fw-bolder text-uppercase "
             style={fontStyles}

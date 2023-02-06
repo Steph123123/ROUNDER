@@ -1,30 +1,47 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useParams, Link } from "react-router-dom";
-import { Motocard } from "../component/motocard";
-import {Maps} from "../component/maps"
+import { Maps } from "../component/maps";
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 import "../../styles/home.css";
 
 export const Circuit = () => {
   const { store, actions } = useContext(Context);
   const { circuitid } = useParams();
+  const [moto,setMoto]=useState({})
+  const [reserve, setReserve]= useState({})
+  const [date, setDate] = useState (new Date())
+
+
+
+
   useEffect(() => {
     actions.getcircuitbyid(circuitid);
     actions.getmotobycircuit(circuitid);
   }, []);
+  // fetch para el modal de la moto
+  const getmotobyid =  (id) => {
+    
+    fetch(store.BACKEND_URL + "/api/moto/" + id)
+  .then((response) => response.json())
+  .then((data) => setMoto(data));
+  
+  };
+  
+ 
   return (
     <div className="circuitcont mt-3">
       <div className=" container text-center justify-content-center">
         <div class="circuitcard card mb-3">
           <div class="  d-flex row ">
-           
-              <img
-                src={store.onecircuit.image}
-                className="circuitimg img-fluid rounded-start  col-4 p-5 h-100"
-                alt="..."
-              />
-            
+            <img
+              src={store.onecircuit.image}
+              className="circuitimg img-fluid rounded-start  col-4 p-5 h-100"
+              alt="..."
+            />
+
             <div class="  col-8">
               <div class="circuitinfo card-body">
                 <h5 class="card-title">
@@ -34,7 +51,7 @@ export const Circuit = () => {
                 <div className="d-flex justify-content-center">
                   <div className="d-flex justify-content-center"> </div>
                   <span>
-                   <Maps place={store.onecircuit.place} />
+                    <Maps place={store.onecircuit.place} />
                   </span>
                 </div>
               </div>
@@ -47,7 +64,7 @@ export const Circuit = () => {
           <div
             key={circuitval.id}
             className="motocard card mb-3 m-auto"
-            style={{ maxWidth: "540px" , maxHeight: "540px" }}
+            style={{ maxWidth: "540px", maxHeight: "540px" }}
           >
             <div className="row g-0">
               <div className="motoimg col-md-4 d-flex">
@@ -61,11 +78,9 @@ export const Circuit = () => {
                 <div className="card-body">
                   <h5 className="card-title">{circuitval.marca}</h5>
                   <p className="card-text">{circuitval.modelo}</p>
-                  <p className="card-text">{circuitval.cilindrada}</p>                
+                  <p className="card-text">{circuitval.cilindrada}</p>
                   <p className="card-text">
-                    <small className="text-muted">
-                      Aviable
-                    </small>
+                    <small className="text-muted">Aviable</small>
                   </p>
                 </div>
               </div>
@@ -73,7 +88,7 @@ export const Circuit = () => {
               <button
                 type="button"
                 onClick={() => {
-                  actions.getmotobyid(circuitval.id);
+                  getmotobyid(circuitval.id);
                 }}
                 className="container btn btn-dark"
                 data-bs-toggle="modal"
@@ -82,7 +97,49 @@ export const Circuit = () => {
                 More...
               </button>
 
-              <Motocard key={store.onemoto.id} moto={store.onemoto} />
+              <div
+      class="motocardmodal  modal fade "
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class=" reservecont modal-dialog modal-xl">
+        <div class="reservemod modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Ready for a round? 
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modalbody modal-body">
+            <img src={moto.image} className=" img-fluid h-50 w-50"/>
+             <h4> {moto.marca}</h4>
+            <h5>{moto.modelo}</h5>
+            <p>{moto.description}</p>
+
+            
+              <Calendar onChange={(e)=>{setReserve({...reserve, date:e})}} value={date} />
+
+            
+            
+          </div>
+          <div class="modalfooter modal-footer">
+          <button type="button" class="modalclose btn " data-bs-dismiss="modal">
+              CLOSE
+            </button>
+            <button type="button" class="modalreserve btn btn-primary">
+              RESERVE
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
             </div>
           </div>
         ))}

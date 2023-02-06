@@ -48,7 +48,7 @@ class Moto(db.Model):
     marca = db.Column(db.String(80), unique=False, nullable=False)
     modelo = db.Column(db.String(80), unique=False, nullable=False)
     cilindrada = db.Column(db.String(80), unique=False, nullable=False)
-    description = db.Column(db.String(100), unique=False, nullable=False)
+    description = db.Column(db.String(500), unique=False, nullable=False)
     price = db.Column(db.Integer, unique=False, nullable=False)
     image = db.Column(db.String(1000), unique=False, nullable=False)
     stripe_id= db.Column(db.String(1000), unique=False, nullable=False)
@@ -104,7 +104,7 @@ class Circuito(db.Model):
 class Reserve(db.Model):
     __tablename__ = 'reserve'
     id = db.Column(db.Integer, primary_key=True)
-    reservation_date = db.Column(db.DateTime(timezone=False), unique=True)
+    reservation_date = db.Column(db.Date, unique=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship("User", back_populates="reserve")
     moto = db.relationship("Moto", back_populates="reserve")
