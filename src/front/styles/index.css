@@ -222,7 +222,19 @@ body {
     width: 10rem;
 }
 
-
+.reservemod{
+    color: rgb(188, 188, 188);
+    background-color: #2d3f3d;
+}
+.modalbody{
+    color: #000000;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.3rem;
+    
+}
+.calendar{
+    margin-left: 35%;
+}
 /*CIRCUITCAR*/
 
 .morebtn {
@@ -250,6 +262,7 @@ body {
 .modalreserve{
     background-color: #00bfd8;
     border-color: #00bfd8;
+    color: #000000;
 }
 .modalclose{
     background-color: #8d8d8d;

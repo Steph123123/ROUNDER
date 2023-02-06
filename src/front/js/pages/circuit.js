@@ -2,35 +2,29 @@ import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useParams, Link } from "react-router-dom";
 import { Maps } from "../component/maps";
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 import "../../styles/home.css";
 
 export const Circuit = () => {
   const { store, actions } = useContext(Context);
   const { circuitid } = useParams();
-  const [moto,setMoto]=useState({})
-  const [reserve, setReserve]= useState({})
-  const [date, setDate] = useState (new Date())
-
-
-
+  const [moto, setMoto] = useState({});
+  const [reserve, setReserve] = useState({});
+  const [date, setDate] = useState(new Date());
 
   useEffect(() => {
     actions.getcircuitbyid(circuitid);
     actions.getmotobycircuit(circuitid);
   }, []);
   // fetch para el modal de la moto
-  const getmotobyid =  (id) => {
-    
+  const getmotobyid = (id) => {
     fetch(store.BACKEND_URL + "/api/moto/" + id)
-  .then((response) => response.json())
-  .then((data) => setMoto(data));
-  
+      .then((response) => response.json())
+      .then((data) => setMoto(data));
   };
-  
- 
+
   return (
     <div className="circuitcont mt-3">
       <div className=" container text-center justify-content-center">
@@ -98,48 +92,65 @@ export const Circuit = () => {
               </button>
 
               <div
-      class="motocardmodal  modal fade "
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class=" reservecont modal-dialog modal-xl">
-        <div class="reservemod modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              Ready for a round? 
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modalbody modal-body">
-            <img src={moto.image} className=" img-fluid h-50 w-50"/>
-             <h4> {moto.marca}</h4>
-            <h5>{moto.modelo}</h5>
-            <p>{moto.description}</p>
+                class="motocardmodal  modal fade "
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class=" reservecont modal-dialog modal-xl">
+                  <div class="reservemod modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Ready for a round?
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modalbody modal-body">
+                      <div className="d-flex mb-5 ">
+                        <img
+                          src={moto.image}
+                          className=" img-fluid h-50 w-50 "
+                        />
+                        <div className="ms-5">
+                          <h1> {moto.marca}</h1>
+                          <h3>{moto.modelo}</h3>
+                          <p>{moto.description}</p>
+                        </div>
+                      </div>
 
-            
-              <Calendar onChange={(e)=>{setReserve({...reserve, date:e})}} value={date} />
-
-            
-            
-          </div>
-          <div class="modalfooter modal-footer">
-          <button type="button" class="modalclose btn " data-bs-dismiss="modal">
-              CLOSE
-            </button>
-            <button type="button" class="modalreserve btn btn-primary">
-              RESERVE
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+                      <div className="calendar">
+                        <Calendar
+                          onChange={(e) => {
+                            setReserve({ ...reserve, date: e });
+                          }}
+                          value={date}
+                        />
+                      </div>
+                    </div>
+                    <div class="modalfooter modal-footer">
+                      <button
+                        type="button"
+                        class="modalclose btn "
+                        data-bs-dismiss="modal"
+                      >
+                        <strong>CLOSE</strong>
+                      </button>
+                      <button
+                        type="button"
+                        class="modalreserve btn btn-primary"
+                      >
+                        <strong>RESERVE</strong>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         ))}
