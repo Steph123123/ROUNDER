@@ -127,7 +127,7 @@ export const Circuit = () => {
                       <div className="calendar">
                         <Calendar
                           onChange={(e) => {
-                            setReserve({ ...reserve, date: e });
+                            setReserve({ ...reserve, moto : moto.id, date: e });
                           }}
                           value={date}
                         />
@@ -144,6 +144,7 @@ export const Circuit = () => {
                       <button
                         type="button"
                         class="modalreserve btn btn-primary"
+                        onClick={()=> {actions.reserve(reserve)}}
                       >
                         <strong>RESERVE</strong>
                       </button>

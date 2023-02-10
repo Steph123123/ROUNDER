@@ -8,7 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       circuitmoto: [],
       user: {},
       onemoto: {},
-      BACKEND_URL:"https://3001-steph123123-rounder-my0fwcgefxm.ws-eu85.gitpod.io",
+      BACKEND_URL:"https://3001-steph123123-rounder-v8eruy96ssk.ws-eu86.gitpod.io",
       isLoggedIn: false,
     },
     actions: {
@@ -153,7 +153,28 @@ const getState = ({ getStore, getActions, setStore }) => {
       localStorage.clear()
       setStore({user:{},isLoggedIn:false})
     
-    }
+    },
+
+    reserve: async (reserve) => {
+      // fetching data from the backend
+      const response = await fetch(
+        getStore().BACKEND_URL+"/api/reserve",
+        {
+          method: "POST",
+          body: JSON.stringify(
+           reserve
+          ),
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      const data = await response.json();
+      console.log(data)
+    },
+
+
   },
   };
 };

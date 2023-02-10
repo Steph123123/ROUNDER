@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Circuito, Moto
+from api.models import db, User, Circuito, Moto,Reserve
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -167,4 +167,21 @@ def verify():
     else:
         return jsonify({"logged":False}), 200 
     
+
+@api.route("/reserve", methods = ["POST"])
+@jwt_required()
+def reserve(): 
+    userid=get_jwt_identity()
+    user=User.query.get(userid)
+    body_date = request.json.get("date")
+    body_moto = request.json.get("moto")
+    if body_date and body_moto :
+        reserve=Reserve(reservation_date=body_date,user_id=userid,moto_id=body_moto)
+        db.session.add(reserve)
+        db.session.commit()
+        return jsonify(reserve.serialize()),200
+    else: 
+        return jsonify("Fail"), 400
+
+
 

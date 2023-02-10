@@ -54,7 +54,6 @@ class Moto(db.Model):
     stripe_id= db.Column(db.String(1000), unique=False, nullable=False)
     circuito_id = db.Column(db.Integer, db.ForeignKey('circuito.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    reserve_id = db.Column(db.Integer, db.ForeignKey('reserve.id'))
     reserve = db.relationship("Reserve", back_populates="moto")
     
 
@@ -104,18 +103,19 @@ class Circuito(db.Model):
 class Reserve(db.Model):
     __tablename__ = 'reserve'
     id = db.Column(db.Integer, primary_key=True)
-    reservation_date = db.Column(db.Date, unique=True)
+    reservation_date = db.Column(db.Date)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    moto_id = db.Column(db.Integer, db.ForeignKey("moto.id"))
     user = db.relationship("User", back_populates="reserve")
     moto = db.relationship("Moto", back_populates="reserve")
 
     def serialize(self):
         return {
             "id": self.id,
-            "reservation_date" : self.reservarion_date,
+            "reservation_date" : self.reservation_date,
             "user_id" : self.user_id,
-            "user" : self.user,
-            "moto" : self.moto
+            "user" : self.user.serialize(),
+           # "moto" : self.moto
 
 
         }
