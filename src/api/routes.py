@@ -183,5 +183,14 @@ def reserve():
     else: 
         return jsonify("Fail"), 400
 
-
+@api.route("/reserve", methods = ["GET"])
+@jwt_required()
+def get_reserve():
+    user_id=get_jwt_identity()
+    reserve=Reserve.query.filter_by(user_id=user_id).first()
+    print(reserve)
+    if reserve:
+        return jsonify({"reserve":reserve.serialize()}), 200 
+    else:
+        return jsonify("no hay reservas encontradas"), 400
 

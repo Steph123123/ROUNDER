@@ -8,8 +8,11 @@ const getState = ({ getStore, getActions, setStore }) => {
       circuitmoto: [],
       user: {},
       onemoto: {},
-      BACKEND_URL:"https://3001-steph123123-rounder-v8eruy96ssk.ws-eu86.gitpod.io",
+      BACKEND_URL:"https://3001-steph123123-rounder-mlhrd7s4ywz.ws-eu86.gitpod.io",
       isLoggedIn: false,
+      user_reserve:{},
+      circuit_reserve:{}
+
     },
     actions: {
       // Use getActions to call a function within a fuction
@@ -172,6 +175,24 @@ const getState = ({ getStore, getActions, setStore }) => {
       );
       const data = await response.json();
       console.log(data)
+    },
+    get_reserve: async () => {
+      const response = await fetch(getStore().BACKEND_URL + "/api/reserve",{
+        method: "GET",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
+      const data = await response.json();
+      console.log(data)
+      setStore({ user_reserve: data.reserve, circuit_reserve:data.reserve.moto.circuito });
+      
+    },
+    logout:async() => {
+      localStorage.clear()
+      setStore({user:{},isLoggedIn:false})
+    
     },
 
 

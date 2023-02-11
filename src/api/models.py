@@ -61,6 +61,7 @@ class Moto(db.Model):
         return f'<Moto {self.modelo}>'
 
     def serialize(self):
+        circuito=Circuito.query.get(self.circuito_id)
         return {
             "id": self.id,
             "image" : self.image,
@@ -68,7 +69,8 @@ class Moto(db.Model):
             "modelo" : self.modelo,
             "cilindrada" : self.cilindrada,
             "description" : self.description,
-            "price" : self.price
+            "price" : self.price,
+            "circuito": circuito.serialize()
             }
 
 
@@ -115,7 +117,7 @@ class Reserve(db.Model):
             "reservation_date" : self.reservation_date,
             "user_id" : self.user_id,
             "user" : self.user.serialize(),
-           # "moto" : self.moto
+            "moto" : self.moto.serialize()
 
 
         }
