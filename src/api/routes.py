@@ -187,10 +187,22 @@ def reserve():
 @jwt_required()
 def get_reserve():
     user_id=get_jwt_identity()
-    reserve=Reserve.query.filter_by(user_id=user_id).first()
-    print(reserve)
+    reserve=Reserve.query.filter_by(user_id=user_id)
+    all_reserve = list(map(lambda reserve: reserve.serialize(),reserve))
+
     if reserve:
-        return jsonify({"reserve":reserve.serialize()}), 200 
+        return jsonify(all_reserve), 200 
     else:
         return jsonify("no hay reservas encontradas"), 400
 
+@api.route("/get_repeat_reserve/<int:reserveid>", methods = ["GET"])
+@jwt_required()
+def get_repeat_reserve(reserveid):
+    print(reserveid)
+    reserve=Reserve.query.get(reserveid)
+    print(reserve.serialize())
+
+    if reserve:
+        return jsonify({"reserve": reserve.serialize()}), 200 
+    else:
+        return jsonify("no hay reservas encontradas"), 400

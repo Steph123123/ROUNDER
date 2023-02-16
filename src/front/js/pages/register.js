@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 import "../../styles/home.css";
 import { useHistory } from "react-router-dom";
 
@@ -15,7 +15,7 @@ export const Register = () => {
   const [username, setUsername] = useState("");
   const [phone, setPhone] = useState("");
   const [adress, setAdress] = useState("");
-  const history=useHistory()
+  const history = useHistory();
 
   const input = {
     width: "30rem",
@@ -29,7 +29,12 @@ export const Register = () => {
     <div className="containerlfuid">
       <div class="jumboregist mt-4 p-5   rounded">
         <h1 className="h1register">Tell us something sbout you...</h1>
-        <p>Un párrafo, también llamado parágrafo, es una unidad comunicativa formada por un conjunto de oraciones secuenciales que trata un mismo tema. Está compuesto por un conjunto de oraciones que tienen cierta unidad temática o que, sin tenerla, se enuncian juntas</p>
+        <p>
+          Un párrafo, también llamado parágrafo, es una unidad comunicativa
+          formada por un conjunto de oraciones secuenciales que trata un mismo
+          tema. Está compuesto por un conjunto de oraciones que tienen cierta
+          unidad temática o que, sin tenerla, se enuncian juntas
+        </p>
       </div>
       <div className=" registro">
         <div className=" col-3"></div>
@@ -101,6 +106,8 @@ export const Register = () => {
               onChange={(e) => setPhone(e.target.value)}
             />
           </div>
+        </div>
+        <div className="regform row">
           <div className="col mt-2">
             <label for=" formGroupExampleInput" className="reglabel form-label">
               {" "}
@@ -112,7 +119,7 @@ export const Register = () => {
               style={input}
               placeholder="Adress"
               aria-label="Adress"
-              name="adress"
+              name="address"
               value={adress}
               onChange={(e) => setAdress(e.target.value)}
             />
@@ -171,16 +178,23 @@ export const Register = () => {
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
           onClick={() => {
-            actions.register(email, password, name, lastname, dni, username,phone,adress);
-            //if (store.mensaje=="Welcome to Rounder!") { 
-              history.replace("/login")
-           // }
+            actions.register(
+              email,
+              password,
+              name,
+              lastname,
+              dni,
+              username,
+              phone,
+              adress
+            );
+            //if (store.mensaje=="Welcome to Rounder!") {
+            history.replace("/login");
+            // }
           }}
         >
           Send
         </button>
-
-        
       </div>
     </div>
   );

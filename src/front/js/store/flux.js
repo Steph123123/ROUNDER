@@ -1,5 +1,5 @@
-import swal from 'sweetalert';
-import { useHistory } from 'react-router-dom';
+import swal from "sweetalert";
+import { useHistory } from "react-router-dom";
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
@@ -8,11 +8,13 @@ const getState = ({ getStore, getActions, setStore }) => {
       circuitmoto: [],
       user: {},
       onemoto: {},
-      BACKEND_URL:"https://3001-steph123123-rounder-mlhrd7s4ywz.ws-eu86.gitpod.io",
+      BACKEND_URL:
+        "https://3001-steph123123-rounder-alosauvuj2y.ws-eu87.gitpod.io",
       isLoggedIn: false,
-      user_reserve:{},
-      circuit_reserve:{}
-
+      user_reserve: [],
+      circuit_reserve: {},
+      circuit_moto: {},
+      user_repeat_reserve: {},
     },
     actions: {
       // Use getActions to call a function within a fuction
@@ -47,39 +49,47 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ circuitmoto: data });
       },
 
-      register: async (email, password, name, lastname, dni, username, phone, adress) => {
+      register: async (
+        email,
+        password,
+        name,
+        lastname,
+        dni,
+        username,
+        phone,
+        adress
+      ) => {
         // fetching data from the backend
-        const response = await fetch(
-          getStore().BACKEND_URL+"/api/register",
-          {
-            method: "POST",
-            body: JSON.stringify({
-              email: email,
-              password: password,
-              name: name,
-              lastname: lastname,
-              dni: dni,
-              username: username,
-              phone: phone,
-              adress: adress
-            }),
-            headers: {
-              "Content-type": "application/json",
-            },
-          }
-        );
+        const response = await fetch(getStore().BACKEND_URL + "/api/register", {
+          method: "POST",
+          body: JSON.stringify({
+            email: email,
+            password: password,
+            name: name,
+            lastname: lastname,
+            dni: dni,
+            username: username,
+            phone: phone,
+            adress: adress,
+          }),
+          headers: {
+            "Content-type": "application/json",
+          },
+        });
         const data = await response.json();
-        console.log(data)
+        console.log(data);
 
-        if (data.mensaje == "Failure"){
+        if (data.mensaje == "Failure") {
           swal({
             text: "Already exist",
             icon: "error",
           });
-        } else if (data.mensaje=="Welcome to Rounder!"){    swal({
-          text: data.mensaje,
-          icon: "success",
-        });}
+        } else if (data.mensaje == "Welcome to Rounder!") {
+          swal({
+            text: data.mensaje,
+            icon: "success",
+          });
+        }
         console.log("Error loading message from backend", data);
       },
       login: async (email, password) => {
@@ -95,108 +105,130 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
         const data = await response.json();
         localStorage.setItem("token", data.access_token);
-        console.log(data)
-        if (data.user){
+        console.log(data);
+        if (data.user) {
           setStore({ user: data.user });
         }
         setStore({ isLoggedIn: data.logged });
-        
-        
+
         //const data = await setStore({ message: data.message }) para guardar informacion en el store
         //.catch(error =>  verificar si hay errores
-       
       },
-   
-    profileimg: async (formData) => {
-      // fetching data from the backend
-      const response = await fetch(getStore().BACKEND_URL + "/api/profile", {
-        method: "POST",
-        body: formData,
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
-      const data = await response.json();
-      //const data = await setStore({ message: data.message }) para guardar informacion en el store
-      //.catch(error =>  verificar si hay errores
-      console.log("Error loading message from backend", data);
-    },
-    editUser: async (user) => {
-      console.log (user)
-      try {
-        let body = new FormData();
-        for (let key in user) {
-          body.append(key, user[key]);
-        }
-        console.log("dios te ama ");
-        const resp = await fetch(getStore().BACKEND_URL + "/api/profileuser", {
-          method: "PUT",
-          headers: {
-            Authorization: "Bearer " + localStorage.getItem("token"),
-          },
-          body: body,
-        });
-        const data = await resp.json();
-        setStore({ user: data.user });
-      } catch (e) {}
-    },
-    
-    verify: async () => {
-      const response = await fetch(getStore().BACKEND_URL + "/api/verify",{
-        method: "GET",
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
-      const data = await response.json();
-      setStore({ user: data.user,isLoggedIn:data.logged });
-    },
-    logout:async() => {
-      localStorage.clear()
-      setStore({user:{},isLoggedIn:false})
-    
-    },
 
-    reserve: async (reserve) => {
-      // fetching data from the backend
-      const response = await fetch(
-        getStore().BACKEND_URL+"/api/reserve",
-        {
+      profileimg: async (formData) => {
+        // fetching data from the backend
+        const response = await fetch(getStore().BACKEND_URL + "/api/profile", {
           method: "POST",
-          body: JSON.stringify(
-           reserve
-          ),
+          body: formData,
           headers: {
             "Content-type": "application/json",
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
+        });
+        const data = await response.json();
+        //const data = await setStore({ message: data.message }) para guardar informacion en el store
+        //.catch(error =>  verificar si hay errores
+        console.log("Error loading message from backend", data);
+      },
+      editUser: async (user) => {
+        console.log(user);
+        try {
+          let body = new FormData();
+          for (let key in user) {
+            body.append(key, user[key]);
+          }
+          console.log("dios te ama ");
+          const resp = await fetch(
+            getStore().BACKEND_URL + "/api/profileuser",
+            {
+              method: "PUT",
+              headers: {
+                Authorization: "Bearer " + localStorage.getItem("token"),
+              },
+              body: body,
+            }
+          );
+          const data = await resp.json();
+          setStore({ user: data.user });
+        } catch (e) {}
+      },
+
+      verify: async () => {
+        const response = await fetch(getStore().BACKEND_URL + "/api/verify", {
+          method: "GET",
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        });
+        const data = await response.json();
+        setStore({ user: data.user, isLoggedIn: data.logged });
+      },
+      logout: async () => {
+        localStorage.clear();
+        setStore({ user: {}, isLoggedIn: false });
+      },
+
+      reserve: async (reserve) => {
+        // fetching data from the backend
+        const response = await fetch(getStore().BACKEND_URL + "/api/reserve", {
+          method: "POST",
+          body: JSON.stringify(reserve),
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        const data = await response.json();
+        if (response.ok) {
+          swal({
+            text: "Reserva realizada",
+            icon: "success",
+          });
+        } else {
+          swal({
+            text: "Error en la reserva",
+            icon: "error",
+          });
         }
-      );
-      const data = await response.json();
-      console.log(data)
+        console.log(data);
+        console.log(response);
+      },
+      get_reserve: async () => {
+        const response = await fetch(getStore().BACKEND_URL + "/api/reserve", {
+          method: "GET",
+          headers: {
+            "Content-type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        });
+        const data = await response.json();
+        console.log(data);
+        setStore({
+          user_reserve: data,
+        });
+      },
+      get_repeat_reserve: async (id) => {
+        const response = await fetch(
+          getStore().BACKEND_URL + "/api/get_repeat_reserve/" + id,
+          {
+            method: "GET",
+            headers: {
+              "Content-type": "application/json",
+              Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+          }
+        );
+        const data = await response.json();
+        console.log(data);
+        setStore({
+          user_repeat_reserve: data.reserve.moto,
+        });
+      },
+      logout: async () => {
+        localStorage.clear();
+        setStore({ user: {}, isLoggedIn: false });
+      },
     },
-    get_reserve: async () => {
-      const response = await fetch(getStore().BACKEND_URL + "/api/reserve",{
-        method: "GET",
-        headers: {
-          "Content-type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
-      const data = await response.json();
-      console.log(data)
-      setStore({ user_reserve: data.reserve, circuit_reserve:data.reserve.moto.circuito });
-      
-    },
-    logout:async() => {
-      localStorage.clear()
-      setStore({user:{},isLoggedIn:false})
-    
-    },
-
-
-  },
   };
 };
 
