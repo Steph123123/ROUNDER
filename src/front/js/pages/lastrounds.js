@@ -20,6 +20,7 @@ export const LastRounds = () => {
         <h5 class="lastrounds card-header">LAST ROUNDS</h5>
 
         <div class=" d-flex card-body">
+          <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-motorbike"
@@ -54,7 +55,9 @@ export const LastRounds = () => {
                 >
                   REPEAT
                 </button>
-
+                </>
+            );
+          })}
                 <div
                   class="motocardmodal  modal fade "
                   id="exampleModalRepeat"
@@ -122,9 +125,7 @@ export const LastRounds = () => {
                     </div>
                   </div>{" "}
                 </div>
-              </>
-            );
-          })}
+          </div>
         </div>
       </div>
     </div>

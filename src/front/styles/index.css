@@ -89,8 +89,11 @@ footer {
 }
 
 .h1register{
-    background-color: #68d6c8;
+    display: flex;
+    justify-content: center;
+    color: #c5fffb;
     border-radius: 0.5rem;
+    padding: 2rem;
 
 }
 .registro {
@@ -128,6 +131,7 @@ footer {
     margin-left: 45%;
     margin-top: 3rem;
     border-color: #2d7c73;
+    margin-bottom: 3rem;
 }
 
 /* PROFILE*/
