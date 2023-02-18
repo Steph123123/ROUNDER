@@ -28,7 +28,10 @@ footer {
     
     
 }
-
+.homeimg{
+    min-width: auto;
+    min-height: 20rem;
+}
 
 /* NAVBAR*/
 .navbtn{
@@ -43,13 +46,17 @@ footer {
     background-image: url(https://i.pinimg.com/736x/2b/ad/5e/2bad5ee9212d497701141cab53c508f0.jpg);
     
 }
+.navbar-toggler{
+    
+    color: #00bfd8;
+}
 
 
 
 
 /*LOGIN*/
 .login{
-    background-image: url(https://img.motoryracing.com/noticias/portada/25000/25794-n.jpg);
+    background-image: url(https://live.staticflickr.com/65535/47121358544_db6c5a0875_o.jpg);
     width: 100%;
     
 }
