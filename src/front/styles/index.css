@@ -37,6 +37,12 @@ footer {
 .navbtn{
     color:#00bfd8;  
 }
+.rexrounder{
+    color: #26a1a1;
+    font-size: 3rem;
+    text-decoration: none;
+    font-family: 'Rubik Mono One', sans-serif;
+}
 .usernamenavbtn{
     color:#00bfd8;
     
@@ -58,12 +64,11 @@ footer {
 .login{
     background-image: url(https://live.staticflickr.com/65535/47121358544_db6c5a0875_o.jpg);
     width: 100%;
-    
+    padding: 3rem;
 }
 
 .imputs{
-    background-image: url(https://thumbs.dreamstime.com/b/tyre-track-texture-skid-marks-road-surface-31183301.jpg);
-    background-color: #ded6d6;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0zE5DxF8YEbGONsApvh2gQJvb8JR3EKidDg&usqp=CAU);
     width: 40%;
     padding: 2rem;
     border-radius: 1rem;
@@ -112,7 +117,7 @@ footer {
 }
 
 .regbtn {
-    background-color: #00bfd8 ;
+    background-color: #009988 ;
     margin-left: 40%;
     width: 20rem;
     margin-bottom: 5rem;
@@ -150,14 +155,14 @@ body {
 }
 
 .username{
-    color: #00bfd8;
+    color: #009988;
     font-size: 3rem;
     
 
 }
 
 .editbtn{
-    background-color: #00bfd8;
+    background-color: #009988;
     width: 10rem;
     color: rgb(0, 0, 0);
 }
@@ -167,11 +172,11 @@ body {
 }
 
 .lastrounds{
-    background-color: #00bfd8;
+    background-color: #009988;
     color:rgb(48, 61, 61)
 }
 .repeatbtn {
-    background-color: #00bfd8;
+    background-color: #009988;
 }
 
 
@@ -189,7 +194,7 @@ body {
 }
 
 .cardcirc{
-    background-color:#00bfd8;
+    background-color:#009988;
     margin: 2rem;
 }
 
@@ -208,7 +213,7 @@ body {
 }
 
 .circuitcard {
-    background-color: #00bfd8;
+    background-color: #009988;
     margin-bottom: 3rem;
 }
 .motocard {
@@ -228,7 +233,7 @@ body {
 }
 
 .motobut{
-    background-color: #00bfd8;
+    background-color: #009988;
     margin-bottom: 3rem;
     width: 10rem;
 }
@@ -268,11 +273,11 @@ body {
 
 /* MODAL*/
 .modalbody{
-    background-color: #00bfd8;
+    background-color: #009988;
 }
 .modalreserve{
-    background-color: #00bfd8;
-    border-color: #00bfd8;
+    background-color: #009988;
+    border-color: #009988;
     color: #000000;
 }
 .modalclose{

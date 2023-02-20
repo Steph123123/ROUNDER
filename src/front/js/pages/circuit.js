@@ -4,6 +4,8 @@ import { useParams, Link } from "react-router-dom";
 import { Maps } from "../component/maps";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import 'mapbox-gl/dist/mapbox-gl.css';
+import Mapbox from "../component/mapbox"
 
 import "../../styles/home.css";
 
@@ -45,7 +47,7 @@ export const Circuit = () => {
                 <div className="d-flex justify-content-center">
                   <div className="d-flex justify-content-center"> </div>
                   <span>
-                    <Maps place={store.onecircuit.place} />
+                    <Mapbox/>
                   </span>
                 </div>
               </div>

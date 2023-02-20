@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import { Context } from "../store/appContext";
-
+import logorex from "../../img/logorex3.jpg";
 export const Navbar = () => {
   const [loggedIn, setLoggedIn] = useState(true);
   const { store, actions } = useContext(Context);
@@ -18,6 +18,8 @@ export const Navbar = () => {
     backgroundColor: "#3F9E9E",
   };
 
+  
+
   const navbarColor = {
     backgroundColor: "rgb(48, 61, 61)",
   };
@@ -30,12 +32,8 @@ export const Navbar = () => {
     return (
       <>
         <Link className=" text-decoration-none" to="/">
-          <span
-            className="navbar-brand mb-0 h1 fs-1 fw-bolder text-uppercase "
-            style={fontStyles}
-          >
-            REX-ROUNDER
-          </span>
+         <img  src= {logorex} width= "100rem"/>
+         <span className="rexrounder">RexRounder</span>
         </Link>
         <button
           class="navbar-toggler "
@@ -85,13 +83,9 @@ export const Navbar = () => {
   const userLoggedNavbar = () => {
     return (
       <>
-        <Link className="text-decoration-none" to="/">
-          <span
-            className="navbar-brand mb-0 h1 fs-1 fw-bolder text-uppercase "
-            style={fontStyles}
-          >
-            REX-ROUNDER
-          </span>
+        <Link className=" text-decoration-none" to="/">
+         <img  src= {logorex} width= "100rem"/>
+         <span className="rexrounder">RexRounder</span>
         </Link>
         <button
           class="navbar-toggler "
