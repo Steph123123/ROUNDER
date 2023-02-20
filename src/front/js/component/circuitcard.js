@@ -27,7 +27,7 @@ export const Circuitcard = () => {
             </div>
             <div className="col-md-8">
               <div className="card-body">
-                <h5 className="card-title">{circuitval.name}</h5>
+                <h5 className="card-title h3">{circuitval.name}</h5>
                 <p className="card-text">{circuitval.description}</p>
               </div>
             </div>

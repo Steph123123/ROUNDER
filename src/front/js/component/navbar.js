@@ -33,7 +33,7 @@ export const Navbar = () => {
       <>
         <Link className=" text-decoration-none" to="/">
          <img  src= {logorex} width= "100rem"/>
-         <span className="rexrounder">RexRounder</span>
+         <span className="rexrounder h1 ms-4"><strong>REX ROUNDER</strong></span>
         </Link>
         <button
           class="navbar-toggler "
@@ -65,12 +65,12 @@ export const Navbar = () => {
         <div class="collapse navbar-collapse " id="navbarNavDropdown">
           <ul className="navbar-nav col-12 d-flex justify-content-end ">
             <Link className=" nav-item nav-link " to="/login">
-              <a class="navbtn nav-link " aria-current="page" href="#">
+              <a class="h3 navbtn nav-link " aria-current="page" href="#">
                 <strong>LOG IN</strong>
               </a>
             </Link>
             <Link className="nav-item nav-link " to="/register">
-              <a class="navbtn nav-link " aria-current="page" href="#">
+              <a class="h3 navbtn nav-link " aria-current="page" href="#">
                 <strong>SIGN UP</strong>
               </a>
             </Link>
@@ -85,7 +85,7 @@ export const Navbar = () => {
       <>
         <Link className=" text-decoration-none" to="/">
          <img  src= {logorex} width= "100rem"/>
-         <span className="rexrounder">RexRounder</span>
+         <span className="rexrounder h1 ms-4">REX ROUNDER</span>
         </Link>
         <button
           class="navbar-toggler "
@@ -117,7 +117,7 @@ export const Navbar = () => {
         <div class="collapse navbar-collapse " id="navbarNavDropdown">
           <ul className="navbar-nav col-12 d-flex justify-content-end ">
             <Link to="/" class="nav-item nav-link" aria-current="page" href="#">
-              <a class="navbtn nav-link " aria-current="page" href="#">
+              <a class="h4 navbtn nav-link " aria-current="page" href="#">
                 <strong>Home</strong>
               </a>
             </Link>
@@ -129,7 +129,7 @@ export const Navbar = () => {
               href="#"
             >
               {" "}
-              <a class="navbtn nav-link " aria-current="page" href="#">
+              <a class="h4 navbtn nav-link " aria-current="page" href="#">
                 <strong>About us</strong>
               </a>
             </Link>
@@ -139,14 +139,14 @@ export const Navbar = () => {
               aria-current="page"
               href="#"
             >
-              <a class="navbtn nav-link " aria-current="page" href="#">
+              <a class="h4 navbtn nav-link " aria-current="page" href="#">
                 <strong>Contact</strong>
               </a>
             </Link>
 
             <div className="nav-item dropdown ">
               <a
-                class="usernamenavbtn nav-link dropdown-toggle "
+                class="usernamenavbtn h4 nav-link dropdown-toggle "
                 href="#"
                 id="navbarDropdown"
                 role="button"

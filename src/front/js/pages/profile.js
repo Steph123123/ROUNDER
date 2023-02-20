@@ -14,7 +14,7 @@ export const Profile = () => {
   };
 
   return (
-    <div className="profcont container text-center mt-5">
+    <div className="container text-center mt-5">
       <div className="card mb-3 w-100 bg-secondary">
         <div className=" imgprof row g-0 ">
           <div className="col-md-4  align-middle m-auto">

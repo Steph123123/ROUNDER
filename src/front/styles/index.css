@@ -1,10 +1,6 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
-footer {
-    background-color: rgb(48, 61, 61);
-    color:aliceblue
-}
 
 /* HOME*/
 .jumbocont{
@@ -38,10 +34,13 @@ footer {
     color:#00bfd8;  
 }
 .rexrounder{
-    color: #26a1a1;
-    font-size: 3rem;
+    color: #00bfd8;
+    font-size: 2rem;
     text-decoration: none;
-    font-family: 'Rubik Mono One', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    
+    
 }
 .usernamenavbtn{
     color:#00bfd8;
@@ -49,7 +48,7 @@ footer {
 }
 
 .imgprof {
-    background-image: url(https://i.pinimg.com/736x/2b/ad/5e/2bad5ee9212d497701141cab53c508f0.jpg);
+    background-image: url(https://www.motorcycle.com/blog/wp-content/uploads/2021/08/082721-Black-Magic-Motorcycle-Tires-1-2.jpg);
     
 }
 .navbar-toggler{
@@ -149,7 +148,7 @@ footer {
 /* PROFILE*/
 
 body {
-    
+    background-image: url(https://img.freepik.com/fotos-premium/marca-pista-neumatico-textura-fondo-pista-carreras-carretera-asfalto_35024-2109.jpg?w=2000);
 
     background-color: rgb(0, 0, 0);
 }
@@ -188,14 +187,13 @@ body {
 /* CIRCUIT PROFILE */
 
 
-.circuitcard1{
-    margin-bottom: 3rem;
-    background-color: #d1e6e9;
-}
+
 
 .cardcirc{
-    background-color:#009988;
+    background-image: url(https://media.istockphoto.com/id/1208331059/es/foto/fondo-de-textura-de-pared-de-color-aquamarine-con-texturas-de-diferentes-tonos-de-aguamarina.jpg?s=612x612&w=0&k=20&c=4mnQExNAzAbGcyrsS9GfzIa61u4OtcUZ4wNUEZOxbAA=);
     margin: 2rem;
+    color: #000000;
+    font-weight: 700;
 }
 
 
@@ -212,10 +210,7 @@ body {
     
 }
 
-.circuitcard {
-    background-color: #009988;
-    margin-bottom: 3rem;
-}
+
 .motocard {
     background-image: url(https://www.shutterstock.com/image-illustration/finish-line-racing-background-top-260nw-1211857849.jpg);
     color:#ded6d6;
@@ -260,9 +255,14 @@ body {
 
 .circuitcard{
     margin-left: 3rem;
+    background-color: #009988;
+    margin-bottom: 3rem;
+    
+    
 
     
 }
+
 .circards{
     margin-left: 3%;
 }
@@ -314,21 +314,24 @@ body {
 
 }
 .contacth1{
-    padding-top: 5rem;
+    padding-top: 3rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #31757c;
 }
 .ppp {
-    margin: 3rem;
     background-color: #b2b9b8;
     border-radius: 1rem;
-    width: 30%;
-    height: 6rem;
-    padding: 2rem;
     font-weight: bold;
-
 }
 
+/*lAST ROUNDS*/
 
+.lastcard{
+    min-height: 40rem;
+}
 
  /* FOOTER*/
+ footer {
+    background-color: rgb(48, 61, 61);
+    color:aliceblue
+}

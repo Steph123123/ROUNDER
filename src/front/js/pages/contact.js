@@ -8,11 +8,11 @@ export const Contact = () => {
 
   return (
     <div className="container">
-      <div className="jumbocontact profcont container  mt-5">
-        <h1 className="contacth1 container text-center mt-5">Contact Us</h1>
-        <div class=" mt-4 p-5   rounded">
-          <div className="cont d-flex">
-            <div className="ppp">
+      <div className="jumbocontact  container  mt-5">
+        <h1 className="contacth1  container text-center ">Contact Us</h1>
+        <div class=" rounded">
+          <div className="cont d-flex justify-content-center">
+            <div className="ppp p-3 m-5 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="icon icon-tabler icon-tabler-phone"
@@ -30,7 +30,7 @@ export const Contact = () => {
               </svg>
 			  <span> 661563757</span>
             </div>
-            <div className="ppp">
+            <div className="ppp p-3 m-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6"
@@ -49,7 +49,7 @@ export const Contact = () => {
               </svg>
 			  <span> steph13am@gmail.com</span>
             </div>
-            <div className="ppp">
+            <div className="ppp p-3 m-5 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="icon icon-tabler icon-tabler-map-pin"
@@ -70,7 +70,7 @@ export const Contact = () => {
             </div>
           </div>
           <div className="contactimg d-flex justify-content-center">
-            <img
+            <img className="img-fluid pb-5"
               src="https://isaydata.com/wp-content/uploads/2021/08/persona-dando-mantenimiento-a-su-moto-780x437.jpg "
               alt=""
             />
