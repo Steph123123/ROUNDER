@@ -18,7 +18,7 @@ export const Register = () => {
   const history = useHistory();
 
   const input = {
-    width: "30rem",
+    
     color: "#000000",
     backgroundColor: "#79D6D9",
     fontzsize: "5rem",
@@ -70,7 +70,7 @@ export const Register = () => {
         </div>
         <div className="regform row">
           <div className="col mt-2">
-            <label for=" formGroupExampleInput" className="reglabel form-label">
+            <label for=" formGroupExampleInput" className="reglabel form-label" >
               {" "}
               User Name
             </label>
