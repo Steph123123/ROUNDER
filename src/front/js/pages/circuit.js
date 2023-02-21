@@ -103,7 +103,7 @@ export const Circuit = () => {
                 <div class=" reservecont modal-dialog modal-xl">
                   <div class="reservemod modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">
+                      <h5 class="modal-title h1 " id="exampleModalLabel">
                         Ready for a round?
                       </h5>
                       <button
@@ -117,7 +117,7 @@ export const Circuit = () => {
                       <div className="d-flex mb-5 ">
                         <img
                           src={moto.image}
-                          className=" img-fluid h-50 w-50 "
+                          className=" img-fluid h-30 w-30 "
                         />
                         <div className="ms-5">
                           <h1> {moto.marca}</h1>

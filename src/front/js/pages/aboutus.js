@@ -10,20 +10,20 @@ export const Aboutus = () => {
 
   return (
     <div className="container">
-      <div className="jumboabout profcont container  mt-5">
+      <div className="jumboabout profcont container-fluid  mt-5">
         <div class="mt-4 p-5   rounded">
-          <h1 className="abouth1 container text-center mt-5">
+          <h1 className="abouth1 container-fluid text-center mt-5">
             About REX-ROUNDER
           </h1>
          
-          <div className="d-flex">
+          <div className=" container-fluid d-flex">
              <video className="videoaout"
             src="https://res.cloudinary.com/steph13am/video/upload/v1673101162/WhatsApp_Video_2023-01-07_at_14.56.37_tmzi48.mp4"
             controls
           >
             {" "}
           </video>
-            <p className="pabout">
+            <p className="pabout container-fluid">
               I am Stephania Alvarez, a veterinarian getting into new work fields where I
               have found new goals, different ways of working and which have
               greatly enriched me in the world of programming and web

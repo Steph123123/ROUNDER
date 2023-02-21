@@ -10,7 +10,7 @@ export const Circuitcard = () => {
     actions.getcircuit();
   }, []);
   return (
-    <div className=" circards row d-flex justify-content-center ">
+    <div className=" circards row d-flex justify-content-center container-fluid">
       {store.circuit.map((circuitval) => (
         <div
           key={circuitval.id}

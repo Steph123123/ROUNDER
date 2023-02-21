@@ -8,10 +8,10 @@ export const Contact = () => {
 
   return (
     <div className="container">
-      <div className="jumbocontact  container  mt-5">
-        <h1 className="contacth1  container text-center ">Contact Us</h1>
+      <div className="jumbocontact  container-fluid  mt-5">
+        <h1 className="contacth1  container-fluid text-center ">Contact Us</h1>
         <div class=" rounded">
-          <div className="cont d-flex justify-content-center">
+          <div className="cont container-fluid d-flex justify-content-center">
             <div className="ppp p-3 m-5 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

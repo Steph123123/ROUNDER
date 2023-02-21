@@ -24,10 +24,6 @@
     
     
 }
-.homeimg{
-    min-width: auto;
-    min-height: 20rem;
-}
 
 /* NAVBAR*/
 .navbtn{
@@ -154,14 +150,14 @@ body {
 }
 
 .username{
-    color: #009988;
+    color:  #00bfd8;
     font-size: 3rem;
     
 
 }
 
 .editbtn{
-    background-color: #009988;
+    background-color:  #00bfd8;
     width: 10rem;
     color: rgb(0, 0, 0);
 }
@@ -171,11 +167,11 @@ body {
 }
 
 .lastrounds{
-    background-color: #009988;
-    color:rgb(48, 61, 61)
+    background-color: #00bfd8;
+    color:rgb(253, 253, 253)
 }
 .repeatbtn {
-    background-color: #009988;
+    background-color:  #00bfd8;
 }
 
 
@@ -228,7 +224,7 @@ body {
 }
 
 .motobut{
-    background-color: #009988;
+    background-color: #00bfd8;
     margin-bottom: 3rem;
     width: 10rem;
 }
@@ -255,7 +251,7 @@ body {
 
 .circuitcard{
     margin-left: 3rem;
-    background-color: #009988;
+    background-color:  #00bfd8;
     margin-bottom: 3rem;
     
     
@@ -273,11 +269,11 @@ body {
 
 /* MODAL*/
 .modalbody{
-    background-color: #009988;
+    background-color:  #00bfd8;
 }
 .modalreserve{
-    background-color: #009988;
-    border-color: #009988;
+    background-color:  #00bfd8;
+    border-color:  #00bfd8;
     color: #000000;
 }
 .modalclose{
