@@ -11,8 +11,8 @@ export const Contact = () => {
       <div className="jumbocontact  container-fluid  mt-5">
         <h1 className="contacth1  container-fluid text-center ">Contact Us</h1>
         <div class=" rounded">
-          <div className="cont container-fluid d-flex justify-content-center">
-            <div className="ppp p-3 m-5 ">
+          <div className="cont container-fluid mb-5 mt-5 d-flex justify-content-center">
+            <div className="ppp p-3 m-auto ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="icon icon-tabler icon-tabler-phone"
@@ -30,7 +30,7 @@ export const Contact = () => {
               </svg>
 			  <span> 661563757</span>
             </div>
-            <div className="ppp p-3 m-5">
+            <div className="ppp p-3 m-auto">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6"
@@ -49,7 +49,7 @@ export const Contact = () => {
               </svg>
 			  <span> steph13am@gmail.com</span>
             </div>
-            <div className="ppp p-3 m-5 ">
+            <div className="ppp p-3 m-auto  ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="icon icon-tabler icon-tabler-map-pin"
