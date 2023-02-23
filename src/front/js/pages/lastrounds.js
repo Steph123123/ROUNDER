@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { Context } from "../store/appContext";
+import moment from "moment";
 
 import "../../styles/home.css";
 
@@ -12,7 +13,7 @@ export const LastRounds = () => {
 
   useEffect(() => {
     actions.get_reserve();
-    console.log(store.user_reserve);
+    console.log("@@@@@@@@@@", moment(store.reservation_date).format('HH:mm'));
   }, []);
   return (
     <div className="profcont container text-center mt-5">
@@ -21,51 +22,67 @@ export const LastRounds = () => {
 
         <div className=" d-flex card-body">
           <div className="w-100">
-            {store.user_reserve.map((moto) => {
-              console.log(moto);
-              return (
-                <>
-                  <ul className="w-100 list-group list-group-horizontal">
-                    <li className="col-2 list-group-item ">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="icon icon-tabler icon-tabler-motorbike"
-                        width="40"
-                        height="40"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="#00bfd8"
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <circle cx="5" cy="16" r="3" />
-                        <circle cx="19" cy="16" r="3" />
-                        <path d="M7.5 14h5l4 -4h-10.5m1.5 4l4 -4" />
-                        <path d="M13 6h2l1.5 3l2 4" />
-                      </svg>
-                    </li>
-                    <li className=" col-2 list-group-item ">{moto.moto.marca}</li>
-                    <li className="col-2 list-group-item ">{moto.moto.modelo}</li>
-                    <li className="col-2 list-group-item ">{moto.moto.circuito.name}</li>
-                    <li className="col-2 list-group-item "> {moto.moto.price}€</li>
+            <table class="table">
+              {store.user_reserve.map((moto) => {
+                return (
+                  <>
 
-                    <li className="btnrepeat col-2 list-group-item bg-dark "><button
-                      type="button"
-                      onClick={() => {
-                        actions.get_repeat_reserve(moto.id);
-                      }}
-                      className="container btn btn-dark "
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModalRepeat"
-                    >
-                      REPEAT
-                    </button></li>
-                  </ul>
-                </>
-              );
-            })}
+
+                    <tbody>
+
+                      <td>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="icon icon-tabler icon-tabler-motorbike"
+                          width="40"
+                          height="40"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="#00bfd8"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                          <circle cx="5" cy="16" r="3" />
+                          <circle cx="19" cy="16" r="3" />
+                          <path d="M7.5 14h5l4 -4h-10.5m1.5 4l4 -4" />
+                          <path d="M13 6h2l1.5 3l2 4" />
+                        </svg>
+                      </td>
+
+                      <td>{moto.moto.modelo}</td>
+
+                      <td> {moto.moto.price}€</td>
+                      <td > {moment(moto.reservation_date).format('DD/MM/YYYY')}</td>
+
+                      <td className="btnrepeat bg-dark "><button
+                        type="button"
+                        onClick={() => {
+                          actions.get_repeat_reserve(moto.id);
+                        }}
+                        className="container btn btn-dark "
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModalRepeat"
+                      >
+                        REPEAT
+                      </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            actions.delete_reserve(moto.id, moto.user_id);
+                          }}
+                          className="container btn btn-secondary "
+                        >
+                          DELETE
+                        </button></td>
+
+                    </tbody>
+
+                  </>
+                );
+              })}
+            </table>
             <div
               className="motocardmodal  modal fade "
               id="exampleModalRepeat"
@@ -124,7 +141,7 @@ export const LastRounds = () => {
                       type="button"
                       className="modalreserve btn btn-primary"
                       onClick={() => {
-                        actions.reserve(reserve);
+                        actions.reserve(reserve, store.user.id);
                       }}
                     >
                       <strong>RESERVE</strong>

@@ -1,5 +1,4 @@
 import swal from "sweetalert";
-import { useHistory } from "react-router-dom";
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
@@ -9,7 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       user: {},
       onemoto: {},
       BACKEND_URL:
-        "https://3001-steph123123-rounder-j7pde3c84ti.ws-eu87.gitpod.io",
+        "https://3001-steph123123-rounder-8mnl1k26r7q.ws-eu87.gitpod.io",
       isLoggedIn: false,
       user_reserve: [],
       circuit_reserve: {},
@@ -168,7 +167,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ user: {}, isLoggedIn: false });
       },
 
-      reserve: async (reserve) => {
+      reserve: async (reserve, user_id) => {
         // fetching data from the backend
         const response = await fetch(getStore().BACKEND_URL + "/api/reserve", {
           method: "POST",
@@ -184,6 +183,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             text: "Reserva realizada",
             icon: "success",
           });
+          getActions().get_reserve(user_id);
         } else {
           swal({
             text: "Error en la reserva",
@@ -223,6 +223,31 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({
           user_repeat_reserve: data.reserve.moto,
         });
+      },
+      delete_reserve: async (reserve_id, user_id) => {
+        const response = await fetch(
+          getStore().BACKEND_URL + "/api/delete_reserve/" + reserve_id,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-type": "application/json",
+              Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+          }
+        );
+        const data = await response.json();
+        if (data.mensaje) {
+          swal({
+            text: data.mensaje,
+            icon: "success",
+          });
+          getActions().get_reserve(user_id);
+        } else {
+          swal({
+            text: data,
+            icon: "error",
+          });
+        }
       },
       logout: async () => {
         localStorage.clear();

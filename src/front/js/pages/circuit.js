@@ -146,7 +146,7 @@ export const Circuit = () => {
                       <button
                         type="button"
                         class="modalreserve btn btn-primary"
-                        onClick={()=> {actions.reserve(reserve)}}
+                        onClick={()=> {actions.reserve(reserve, store.user.id)}}
                       >
                         <strong>RESERVE</strong>
                       </button>

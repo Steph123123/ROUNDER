@@ -198,11 +198,21 @@ def get_reserve():
 @api.route("/get_repeat_reserve/<int:reserveid>", methods = ["GET"])
 @jwt_required()
 def get_repeat_reserve(reserveid):
-    print(reserveid)
     reserve=Reserve.query.get(reserveid)
-    print(reserve.serialize())
 
     if reserve:
         return jsonify({"reserve": reserve.serialize()}), 200 
     else:
         return jsonify("no hay reservas encontradas"), 400
+
+@api.route("/delete_reserve/<int:reserveid>", methods = ["DELETE"])
+@jwt_required()
+def delete_reserve(reserveid):
+    reserve=Reserve.query.get(reserveid)
+    
+    if reserve:
+        db.session.delete(reserve)
+        db.session.commit()
+        return jsonify({"mensaje" : 'Reserva eliminada'}), 200 
+    else:
+        return jsonify("No hay reservas encontradas"), 400
