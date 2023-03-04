@@ -3,349 +3,267 @@
 */
 
 /* HOME*/
-.jumbocont{
-    height:auto;
-    width: 100%;
-    background-image: url(https://live.staticflickr.com/65535/47121358544_db6c5a0875_o.jpg);
-
+.jumbocont {
+  height: auto;
+  width: 100%;
+  background-image: url(https://live.staticflickr.com/65535/47121358544_db6c5a0875_o.jpg);
 }
-.jumbotron{
-    width: 75%;
+.jumbotron,
+.jumbop {
+  width: 100%;
 }
 .h1cont {
-    width: 50%;
-}
-.jumbop {
-    font-size: 2rem;
+  width: 50%;
 }
 
 .hello {
-    color: #00bfd8;
-    
-    
+  color: #00bfd8;
 }
 
 /* NAVBAR*/
-.navbtn{
-    color:#00bfd8;  
+.navbtn {
+  color: #00bfd8;
 }
-.rexrounder{
-    color: #00bfd8;
-   
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    
-    
+.rexrounder {
+  color: #00bfd8;
+
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
 }
-.usernamenavbtn{
-    color:#00bfd8;
-    
+.usernamenavbtn {
+  color: #00bfd8;
 }
 
 .imgprof {
-    background-image: url(https://www.motorcycle.com/blog/wp-content/uploads/2021/08/082721-Black-Magic-Motorcycle-Tires-1-2.jpg);
-    
+  background-image: url(https://www.motorcycle.com/blog/wp-content/uploads/2021/08/082721-Black-Magic-Motorcycle-Tires-1-2.jpg);
 }
-.navbar-toggler{
-    
-    color: #00bfd8;
+.navbar-toggler {
+  color: #00bfd8;
 }
-
-
-
 
 /*LOGIN*/
-.login{
-    background-image: url(https://live.staticflickr.com/65535/47121358544_db6c5a0875_o.jpg);
-    width: 100%;
-    padding: 3rem;
+.login {
+  background-image: url(https://live.staticflickr.com/65535/47121358544_db6c5a0875_o.jpg);
+  width: 100%;
+  padding: 3rem;
 }
 
-.imputs{
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0zE5DxF8YEbGONsApvh2gQJvb8JR3EKidDg&usqp=CAU);
-   
-    padding: 2rem;
-    border-radius: 1rem;
-    margin-bottom: 3rem;
-    border-style: solid;
-    border-color: black;
+.imputs {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0zE5DxF8YEbGONsApvh2gQJvb8JR3EKidDg&usqp=CAU);
+
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  border-style: solid;
+  border-color: black;
 }
-.helpinline{
-    color:#2d3f3d
-    
+.helpinline {
+  color: #2d3f3d;
 }
-.submitlog{
-    background-color: #2d3f3d;
-    width: 10rem;
-    border-style: solid;
-    border-color: black;
+.submitlog {
+  background-color: #2d3f3d;
+  width: 10rem;
+  border-style: solid;
+  border-color: black;
 }
-
-
-
-
-
 
 /* REGISTRO*/
-.jumboregist{
-    background-image: url(https://images.daznservices.com/di/library/DAZN_News/e2/80/circuito-de-las-americas-austin-motogp_1sjhomu37yjws146mw1amdmn9h.jpg?t=-14992489);
-    margin-bottom: 3rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
+.jumboregist {
+  background-image: url(https://images.daznservices.com/di/library/DAZN_News/e2/80/circuito-de-las-americas-austin-motogp_1sjhomu37yjws146mw1amdmn9h.jpg?t=-14992489);
+  margin-bottom: 3rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.h1register{
-    display: flex;
-    justify-content: center;
-    color: #000000;
-    border-radius: 0.5rem;
-    padding: 2rem;
-
+.h1register {
+  display: flex;
+  justify-content: center;
+  color: #000000;
+  border-radius: 0.5rem;
+  padding: 2rem;
 }
 .registro {
-    background-color: rgb(255, 255, 255);
-    width: 75%;
-    text-align: center;
-    align-items: center;
-    border-radius: 3rem;
-    margin: auto;
+  background-color: rgb(255, 255, 255);
+  width: 75%;
+  text-align: center;
+  align-items: center;
+  border-radius: 3rem;
+  margin: auto;
 }
 .reglabel {
-    font-weight: bold;
-    
+  font-weight: bold;
 }
 
-
-.inputsign{
-    border-color: rgb(51, 131, 141);
+.inputsign {
+  border-color: rgb(51, 131, 141);
 }
 
-.regform{
-    margin: auto;
-    padding-top: 3rem;
-    
-    
-   
-
-    
+.regform {
+  margin: auto;
+  padding-top: 3rem;
 }
 .firstform {
-    margin-top:20%;
-    
+  margin-top: 20%;
 }
 
-.signbtn{
-    background-color: #31757c;
-    width:10rem;
-    margin: 3rem auto 3rem auto;
-    margin-top: 3rem;
-    border-color: #2d7c73;
-    
+.signbtn {
+  background-color: #31757c;
+  width: 10rem;
+  margin: 3rem auto 3rem auto;
+  margin-top: 3rem;
+  border-color: #2d7c73;
 }
 
 /* PROFILE*/
 
 body {
-    background-image: url(https://img.freepik.com/foto-gratis/cerrar-textura-asfalto_23-2148978375.jpg);
-    
-    background-color: rgba(0, 0, 0 , 05);
-    width: 100%;
-    height: 100%;
+  background-image: url(https://img.freepik.com/foto-gratis/cerrar-textura-asfalto_23-2148978375.jpg);
+
+  background-color: rgba(0, 0, 0, 05);
+  width: 100%;
+  height: 100%;
 }
 
-.username{
-    color:  #00bfd8;
-    font-size: 3rem;
-    
-
+.username {
+  color: #00bfd8;
+  font-size: 3rem;
 }
 
-.editbtn{
-    background-color:  #00bfd8;
-    width: 10rem;
-    color: rgb(0, 0, 0);
+.editbtn {
+  background-color: #00bfd8;
+  width: 10rem;
+  color: rgb(0, 0, 0);
 }
-.lastcard{
-    border-style: solid;
-    border-color: #2d3f3d;
+.lastcard {
+  border-style: solid;
+  border-color: #2d3f3d;
 }
 
-.lastrounds{
-    background-color: #00bfd8;
-    color:rgb(253, 253, 253)
+.lastrounds {
+  background-color: #00bfd8;
+  color: rgb(253, 253, 253);
 }
 .repeatbtn {
-    background-color:  #00bfd8;
+  background-color: #00bfd8;
 }
-
-
-
-
-
-
 
 /* CIRCUIT PROFILE */
 
+.cardcirc {
+  background-image: url(https://thumbs.dreamstime.com/b/texturas-azules-del-algod%C3%B3n-111097225.jpg);
+  margin: 2rem;
+  color: #000000;
+  font-weight: 700;
 
-
-
-.cardcirc{
-    background-image: url(https://thumbs.dreamstime.com/b/texturas-azules-del-algod%C3%B3n-111097225.jpg);
-    margin: 2rem;
-    color: #000000;
-    font-weight: 700;
-    
-    
-    -webkit-box-shadow: 1px 3px 30px 11px rgba(0,0,0,0.91);
--moz-box-shadow: 1px 3px 30px 11px rgba(0,0,0,0.91);
-box-shadow: 1px 3px 30px 11px rgba(0,0,0,0.91);
+  -webkit-box-shadow: 1px 3px 30px 11px rgba(0, 0, 0, 0.91);
+  -moz-box-shadow: 1px 3px 30px 11px rgba(0, 0, 0, 0.91);
+  box-shadow: 1px 3px 30px 11px rgba(0, 0, 0, 0.91);
 }
-
-
 
 .circuitinfo {
-    margin-top: 3rem;
-    margin-right: 3rem;
-    margin-bottom: 3rem;
-    padding: 3rem;
-    background-color: #dcdada;
-    border-radius: 1rem;
-    
-    
-    
+  margin-top: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
+  padding: 3rem;
+  background-color: #dcdada;
+  border-radius: 1rem;
 }
-
 
 .motocard {
-    background-image: url(https://www.shutterstock.com/image-illustration/finish-line-racing-background-top-260nw-1211857849.jpg);
-    color:#ded6d6;
-    border-color: #000000;
-   
-    
+  background-image: url(https://www.shutterstock.com/image-illustration/finish-line-racing-background-top-260nw-1211857849.jpg);
+  color: #ded6d6;
+  border-color: #000000;
 }
-
-
 
 .motodimg {
-    margin-top: 2rem;
-    margin-left: 2rem;
-    
+  margin-top: 2rem;
+  margin-left: 2rem;
 }
 
-.motobut{
-    background-color: #00bfd8;
-    margin-bottom: 3rem;
-    width: 10rem;
+.motobut {
+  background-color: #00bfd8;
+  margin-bottom: 3rem;
+  width: 10rem;
 }
 
-.reservemod{
-    color: rgb(188, 188, 188);
-    background-color: #2d3f3d;
+.reservemod {
+  color: rgb(188, 188, 188);
+  background-color: #2d3f3d;
 }
-.modalbody{
-    color: #000000;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 1.3rem;
-    
+.modalbody {
+  color: #000000;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 1.3rem;
 }
-.calendar{
-    margin-left: 35%;
+.calendar {
+  margin-left: 35%;
 }
 /*CIRCUITCAR*/
 
-.morebtn {
-    margin-left: 75%;
-    margin-bottom: 1rem;
+.circuitcard {
+  margin-left: 3rem;
+  background-color: #00bfd8;
+  margin-bottom: 3rem;
 }
-
-.circuitcard{
-    margin-left: 3rem;
-    background-color:  #00bfd8;
-    margin-bottom: 3rem;
-    
-    
-
-    
-}
-
-.circards{
-    margin-left: 3%;
-}
-
-
-
-
 
 /* MODAL*/
-.modalbody{
-    background-color:  #00bfd8;
+.modalbody {
+  background-color: #00bfd8;
 }
-.modalreserve{
-    background-color:  #00bfd8;
-    border-color:  #00bfd8;
-    color: #000000;
+.modalreserve {
+  background-color: #00bfd8;
+  border-color: #00bfd8;
+  color: #000000;
 }
-.modalclose{
-    background-color: #8d8d8d;
-    border-color: #8d8d8d;
+.modalclose {
+  background-color: #8d8d8d;
+  border-color: #8d8d8d;
 }
-.modalfooter{
-    background-color:#2d3f3d;
+.modalfooter {
+  background-color: #2d3f3d;
 }
-
 
 /*ABOUT US*/
 .jumboabout {
-    background-color: #def6f9;
-
+  background-color: #def6f9;
 }
-.abouth1{
-    margin-bottom: 3rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #31757c;
+.abouth1 {
+  margin-bottom: 3rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #31757c;
 }
-.videoaout{
-    width: 60%;
+.videoaout {
+  width: 60%;
 }
-.pabout{
-    width: 40%;
-    margin-left: 2rem;
-    font-size: 25px;
+.pabout {
+  width: 40%;
+  margin-left: 2rem;
+  font-size: 25px;
 }
 
 /*CONTACT*/
 .jumbocontact {
-    background-color: #def6f9;
-
+  background-color: #def6f9;
 }
-.contacth1{
-    padding-top: 3rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #31757c;
+.contacth1 {
+  padding-top: 3rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #31757c;
 }
 .ppp {
-    background-color: #b2b9b8;
-    border-radius: 1rem;
-    font-weight: bold;
-    
-}
-
-@media (min-width:768px) {
-    .ppp {
-        display: flex;
-        flex-direction: column;    
-        
+  background-color: #b2b9b8;
+  border-radius: 1rem;
+  font-weight: bold;
 }
 
 /*lAST ROUNDS*/
 
-.lastcard{
-    min-height: 40rem;
+.lastcard {
+  min-height: 40rem;
 }
 
- /* FOOTER*/
- footer {
-    background-color: rgb(48, 61, 61);
-    color:aliceblue
+/* FOOTER*/
+footer {
+  background-color: rgb(48, 61, 61);
+  color: aliceblue;
 }
