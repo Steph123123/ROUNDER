@@ -58,11 +58,6 @@ export const Login = () => {
 				onChange = {(e)=> setPassword(e.target.value)}
               />
             </div>
-            <div class="col-auto">
-              <span id="passwordHelpInline" class="helpinline form-text">
-                Must be 8-20 characters long.
-              </span>
-            </div>
           </div>
 
 		  <div class="checkbox mb-3">
